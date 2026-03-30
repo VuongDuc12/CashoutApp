@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VuaHoanTien — San deal xin, nhan hoan tien</title>
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+
+  <!-- ========== TOP NAVIGATION ========== -->
+  <nav class="top-nav">
+    <a href="index.html" class="nav-brand">VuaHoanTien</a>
+    <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html" class="active">Trang chu</a></li>
+      <li><a href="vouchers.html">Ma giam gia</a></li>
+      <li><a href="dashboard.html" data-auth-required>Dashboard</a></li>
+      <li><a href="orders.html" data-auth-required>Don hang</a></li>
+      <li><a href="wallet.html" data-auth-required>Vi tien</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="notifications.html" class="nav-icon-btn" title="Thong bao" data-auth-required>
+        &#128276;
+        <span class="badge-dot"></span>
+      </a>
+      <a href="login.html" class="btn btn-ghost btn-sm btn-pill">Dang nhap</a>
+      <a href="register.html" class="btn btn-primary btn-sm btn-pill">Dang ky</a>
+    </div>
+  </nav>
+
+  <!-- ========== HERO BANNER ========== -->
+  <div class="page-content">
+    <div class="container-wide">
+
+      <section class="hero-banner animate-fade-in-up" style="margin-bottom: var(--space-8);">
+        <span class="badge badge-accent" style="margin-bottom: var(--space-4);">&#9733; Hoan tien tu moi don hang</span>
+        <h1 class="hero-title font-display">San deal xin,<br>mua chuan link,<br>nhan hoan tien ro rang</h1>
+        <p class="hero-subtitle">Dan link san pham Shopee hoac Lazada — nhan hoan tien ve vi moi khi mua hang qua VuaHoanTien.</p>
+        <div class="url-input-wrap" style="max-width: 640px;">
+          <input type="text" id="hero-url-input" placeholder="Dan link san pham Shopee / Lazada vao day..." autocomplete="off">
+          <button class="btn btn-primary" onclick="VHT.createDeepLink(document.getElementById('hero-url-input').value)">Tao link</button>
+        </div>
+      </section>
+
+      <!-- ========== BENTO SECTION ========== -->
+      <section class="bento-grid stagger animate-fade-in-up" style="margin-bottom: var(--space-8);">
+
+        <!-- Campaign Banner -->
+        <div class="span-8">
+          <div class="card card-glass" style="height: 100%; background: linear-gradient(135deg, rgba(124,140,255,0.15), rgba(91,231,196,0.1)); position: relative; overflow: hidden; padding: var(--space-8);">
+            <div style="position: absolute; top: -40px; right: -40px; width: 200px; height: 200px; border-radius: 50%; background: rgba(91,231,196,0.08);"></div>
+            <span class="badge badge-danger" style="margin-bottom: var(--space-3);">&#9889; Flash Sale 0h</span>
+            <h2 class="text-h2 font-display" style="color: var(--text-primary); margin-bottom: var(--space-3);">Deal khung 0h dem nay</h2>
+            <p class="text-caption text-secondary" style="margin-bottom: var(--space-4); max-width: 400px;">Giam den 50% tu Shopee & Lazada. Bat link mua qua VuaHoanTien de nhan them hoan tien!</p>
+            <a href="vouchers.html" class="btn btn-accent btn-pill">Xem deal ngay &#8594;</a>
+          </div>
+        </div>
+
+        <!-- Wallet Teaser -->
+        <div class="span-4">
+          <div class="card" style="height: 100%; display: flex; flex-direction: column; justify-content: space-between;">
+            <div>
+              <div style="font-size: 2rem; margin-bottom: var(--space-3);">&#128176;</div>
+              <h3 class="text-title" style="margin-bottom: var(--space-2);">Vi VuaHoanTien</h3>
+              <p class="text-caption text-muted" style="margin-bottom: var(--space-4);">Theo doi so du hoan tien va rut ve tai khoan bat ky luc nao.</p>
+            </div>
+            <div style="display: flex; gap: var(--space-4);">
+              <div>
+                <div class="text-small text-muted">Cho duyet</div>
+                <div class="text-title text-warning font-display" data-counter="1250000">0</div>
+              </div>
+              <div>
+                <div class="text-small text-muted">Kha dung</div>
+                <div class="text-title text-success font-display" data-counter="3780000">0</div>
+              </div>
+            </div>
+            <a href="wallet.html" class="btn btn-ghost btn-sm btn-pill mt-4" data-auth-required>Xem vi &#8594;</a>
+          </div>
+        </div>
+
+        <!-- Voucher Hot #1 -->
+        <div class="span-4">
+          <div class="voucher-card" onclick="window.location.href='voucher-detail.html'">
+            <span class="voucher-badge shopee">&#9679; Shopee</span>
+            <div class="voucher-discount">Giam 80K</div>
+            <div class="voucher-title">Don tu 400K — Tat ca nganh hang</div>
+            <div class="voucher-meta">
+              <span>&#128339; Con 2 ngay</span>
+              <span>&#128293; 1.2K da dung</span>
+            </div>
+            <div class="voucher-actions">
+              <button class="btn btn-primary btn-sm btn-pill" onclick="event.stopPropagation(); VHT.copyCode('SHOPEE80K', this)">Copy ma</button>
+              <button class="btn btn-ghost btn-sm btn-pill" onclick="event.stopPropagation(); VHT.toast('Dang mo Shopee...', 'info')">Dung ngay</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Voucher Hot #2 -->
+        <div class="span-4">
+          <div class="voucher-card" onclick="window.location.href='voucher-detail.html'">
+            <span class="voucher-badge lazada">&#9679; Lazada</span>
+            <div class="voucher-discount">Giam 15%</div>
+            <div class="voucher-title">Toi da 200K — Dien tu & Phu kien</div>
+            <div class="voucher-meta">
+              <span>&#128339; Con 5 ngay</span>
+              <span>&#128293; 856 da dung</span>
+            </div>
+            <div class="voucher-actions">
+              <button class="btn btn-primary btn-sm btn-pill" onclick="event.stopPropagation(); VHT.copyCode('LAZADA15PCT', this)">Copy ma</button>
+              <button class="btn btn-ghost btn-sm btn-pill" onclick="event.stopPropagation(); VHT.toast('Dang mo Lazada...', 'info')">Dung ngay</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Voucher Hot #3 -->
+        <div class="span-4">
+          <div class="voucher-card" onclick="window.location.href='voucher-detail.html'">
+            <span class="voucher-badge shopee">&#9679; Shopee</span>
+            <div class="voucher-discount">Free Ship</div>
+            <div class="voucher-title">Mien phi van chuyen — Toan quoc</div>
+            <div class="voucher-meta">
+              <span>&#128339; Con 1 ngay</span>
+              <span>&#128293; 3.5K da dung</span>
+            </div>
+            <div class="voucher-actions">
+              <button class="btn btn-primary btn-sm btn-pill" onclick="event.stopPropagation(); VHT.copyCode('FREESHIP0D', this)">Copy ma</button>
+              <button class="btn btn-ghost btn-sm btn-pill" onclick="event.stopPropagation(); VHT.toast('Dang mo Shopee...', 'info')">Dung ngay</button>
+            </div>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- ========== PROMO STRIP ========== -->
+      <section class="promo-strip" style="margin-bottom: var(--space-8);">
+        <a href="vouchers.html" class="promo-tag hot">&#128293; Shopee Hot Deal</a>
+        <a href="vouchers.html" class="promo-tag deal">&#9889; Lazada Flash Sale</a>
+        <a href="vouchers.html" class="promo-tag brand">&#127775; Brand Day</a>
+        <a href="vouchers.html" class="promo-tag deal">&#128666; Free Ship Xtra</a>
+        <a href="vouchers.html" class="promo-tag hot">&#127974; Bank Week</a>
+        <a href="vouchers.html" class="promo-tag brand">&#127873; Ma doc quyen</a>
+        <a href="vouchers.html" class="promo-tag deal">&#128176; Cashback 10%</a>
+      </section>
+
+      <!-- ========== HOW IT WORKS ========== -->
+      <section style="margin-bottom: var(--space-12);">
+        <h2 class="text-h2 font-display text-center mb-8">Cach hoat dong</h2>
+        <div class="grid-3 gap-6 stagger">
+          <div class="card text-center animate-fade-in-up" style="padding: var(--space-8);">
+            <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--brand-primary-dim); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin: 0 auto var(--space-4);">&#128279;</div>
+            <h3 class="text-title mb-2">1. Dan link san pham</h3>
+            <p class="text-caption text-muted">Copy link bat ky tu Shopee hoac Lazada va dan vao o tim kiem.</p>
+          </div>
+          <div class="card text-center animate-fade-in-up" style="padding: var(--space-8);">
+            <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--brand-secondary-dim); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin: 0 auto var(--space-4);">&#128722;</div>
+            <h3 class="text-title mb-2">2. Mua hang qua link</h3>
+            <p class="text-caption text-muted">Bam "Mua ngay" de mo ung dung voi link theo doi hoan tien.</p>
+          </div>
+          <div class="card text-center animate-fade-in-up" style="padding: var(--space-8);">
+            <div style="width: 64px; height: 64px; border-radius: 50%; background: var(--brand-accent-dim); display: flex; align-items: center; justify-content: center; font-size: 1.75rem; margin: 0 auto var(--space-4);">&#128176;</div>
+            <h3 class="text-title mb-2">3. Nhan hoan tien</h3>
+            <p class="text-caption text-muted">Sau khi don hang xac nhan, tien se duoc cong vao vi cua ban.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== FEATURED VOUCHERS GRID ========== -->
+      <section style="margin-bottom: var(--space-12);">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-h2 font-display">Ma giam gia de xuat</h2>
+          <a href="vouchers.html" class="btn btn-ghost btn-sm btn-pill">Xem tat ca &#8594;</a>
+        </div>
+        <div class="grid-4 gap-5 stagger">
+
+          <div class="voucher-card animate-fade-in-up" onclick="window.location.href='voucher-detail.html'">
+            <span class="voucher-badge shopee">&#9679; Shopee</span>
+            <div class="voucher-discount">Giam 50K</div>
+            <div class="voucher-title">Don tu 250K — Thoi trang</div>
+            <div class="voucher-meta"><span>&#128339; Con 3 ngay</span></div>
+            <div class="voucher-actions">
+              <button class="btn btn-primary btn-sm btn-pill w-full" onclick="event.stopPropagation(); VHT.copyCode('FASHION50K', this)">Copy ma</button>
+            </div>
+          </div>
+
+          <div class="voucher-card animate-fade-in-up" onclick="window.location.href='voucher-detail.html'">
+            <span class="voucher-badge lazada">&#9679; Lazada</span>
+            <div class="voucher-discount">Giam 120K</div>
+            <div class="voucher-title">Don tu 600K — Do gia dung</div>
+            <div class="voucher-meta"><span>&#128339; Con 1 ngay</span></div>
+            <div class="voucher-actions">
+              <button class="btn btn-primary btn-sm btn-pill w-full" onclick="event.stopPropagation(); VHT.copyCode('HOME120K', this)">Copy ma</button>
+            </div>
+          </div>
+
+          <div class="voucher-card animate-fade-in-up" onclick="window.location.href='voucher-detail.html'">
+            <span class="voucher-badge shopee">&#9679; Shopee</span>
+            <div class="voucher-discount">Giam 30%</div>
+            <div class="voucher-title">Toi da 100K — Suc khoe & Lam dep</div>
+            <div class="voucher-meta"><span>&#128339; Con 4 ngay</span></div>
+            <div class="voucher-actions">
+              <button class="btn btn-primary btn-sm btn-pill w-full" onclick="event.stopPropagation(); VHT.copyCode('BEAUTY30P', this)">Copy ma</button>
+            </div>
+          </div>
+
+          <div class="voucher-card animate-fade-in-up" onclick="window.location.href='voucher-detail.html'">
+            <span class="voucher-badge lazada">&#9679; Lazada</span>
+            <div class="voucher-discount">Giam 200K</div>
+            <div class="voucher-title">Don tu 1 trieu — Dien tu</div>
+            <div class="voucher-meta"><span>&#128339; Con 7 ngay</span></div>
+            <div class="voucher-actions">
+              <button class="btn btn-primary btn-sm btn-pill w-full" onclick="event.stopPropagation(); VHT.copyCode('TECH200K', this)">Copy ma</button>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- ========== CASHBACK CTA ========== -->
+      <section style="margin-bottom: var(--space-12);">
+        <div class="card card-glass" style="text-align: center; padding: var(--space-12); background: linear-gradient(135deg, rgba(255,214,107,0.08), rgba(255,158,87,0.08)); position: relative; overflow: hidden;">
+          <div style="position: absolute; top: -60px; left: -60px; width: 200px; height: 200px; border-radius: 50%; background: rgba(255,214,107,0.06);"></div>
+          <div style="position: absolute; bottom: -40px; right: -40px; width: 160px; height: 160px; border-radius: 50%; background: rgba(255,158,87,0.06);"></div>
+          <div style="position: relative; z-index: 1;">
+            <h2 class="text-h2 font-display mb-3">Mua ngay qua VuaHoanTien</h2>
+            <p class="text-body text-secondary mb-6" style="max-width: 500px; margin: 0 auto var(--space-6);">De khong bo lo phan hoan tien cua ban. Dan link san pham, nhan tien moi khi mua hang!</p>
+            <div class="url-input-wrap" style="max-width: 560px; margin: 0 auto;">
+              <input type="text" id="cta-url-input" placeholder="Dan link san pham vao day..." autocomplete="off">
+              <button class="btn btn-accent" onclick="VHT.createDeepLink(document.getElementById('cta-url-input').value)">Tao link &#8594;</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand">VuaHoanTien</div>
+            <p class="footer-desc">Nen tang hoan tien hang dau Viet Nam. San deal, copy ma, mua hang qua link — nhan hoan tien ro rang ve vi cua ban.</p>
+          </div>
+          <div class="footer-col">
+            <h4>San pham</h4>
+            <ul>
+              <li><a href="vouchers.html">Ma giam gia</a></li>
+              <li><a href="index.html">Hoan tien</a></li>
+              <li><a href="wallet.html">Vi tien</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Tai khoan</h4>
+            <ul>
+              <li><a href="register.html">Dang ky</a></li>
+              <li><a href="login.html">Dang nhap</a></li>
+              <li><a href="settings.html">Cai dat</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Ho tro</h4>
+            <ul>
+              <li><a href="#">Huong dan</a></li>
+              <li><a href="#">Lien he</a></li>
+              <li><a href="#">Dieu khoan</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          &copy; 2026 VuaHoanTien. Tat ca quyen duoc bao luu.
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cai dat — VuaHoanTien</title>
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <style>
+    .settings-content {
+      max-width: 720px;
+    }
+    .settings-content .form-group {
+      margin-bottom: var(--space-5);
+    }
+    .payment-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-4) var(--space-5);
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-md);
+      transition: all var(--motion-fast);
+      cursor: pointer;
+    }
+    .payment-card:hover {
+      border-color: var(--border-strong);
+    }
+    .payment-card.default {
+      border-color: var(--brand-primary);
+      background: rgba(91,231,196,0.04);
+    }
+    .payment-card-left {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+    }
+    .payment-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      flex-shrink: 0;
+    }
+    .payment-card-actions {
+      display: flex;
+      gap: var(--space-2);
+    }
+    .avatar-section {
+      display: flex;
+      align-items: center;
+      gap: var(--space-5);
+      margin-bottom: var(--space-8);
+    }
+    .avatar-large {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: var(--gradient-hero);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: var(--weight-bold);
+      color: var(--text-inverse);
+      flex-shrink: 0;
+    }
+    .security-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-5);
+      border-bottom: 1px solid var(--border-soft);
+    }
+    .security-item:last-child { border-bottom: none; }
+  </style>
+</head>
+<body>
+
+  <!-- ========== TOP NAVIGATION ========== -->
+  <nav class="top-nav">
+    <a href="index.html" class="nav-brand">VuaHoanTien</a>
+    <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Trang chu</a></li>
+      <li><a href="vouchers.html">Ma giam gia</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="orders.html">Don hang</a></li>
+      <li><a href="wallet.html">Vi tien</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="notifications.html" class="nav-icon-btn" title="Thong bao">
+        &#128276;
+        <span class="badge-dot"></span>
+      </a>
+      <a href="settings.html" class="nav-avatar" title="Tai khoan" style="background: var(--brand-primary); color: var(--text-inverse);">N</a>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <div class="container">
+
+      <!-- ========== PAGE HEADER ========== -->
+      <section class="animate-fade-in-up" style="margin-bottom: var(--space-6);">
+        <h1 class="text-h2 font-display" style="margin-bottom: var(--space-2);">Cai dat tai khoan</h1>
+        <p class="text-caption text-muted">Quan ly ho so, phuong thuc thanh toan va bao mat.</p>
+      </section>
+
+      <!-- ========== TABS ========== -->
+      <div class="tabs-container animate-fade-in-up">
+        <div class="tabs" style="margin-bottom: 0;">
+          <button class="tab-btn active" data-tab="profile">Ho so</button>
+          <button class="tab-btn" data-tab="payment">Thanh toan</button>
+          <button class="tab-btn" data-tab="security">Bao mat</button>
+        </div>
+
+        <!-- ===== TAB: Profile ===== -->
+        <div class="tab-content active" data-tab="profile">
+          <div class="settings-content">
+
+            <div class="avatar-section">
+              <div class="avatar-large">N</div>
+              <div>
+                <h3 class="text-title" style="margin-bottom: var(--space-1);">Nguyen Van A</h3>
+                <p class="text-caption text-muted">nguyenvana@email.com</p>
+                <button class="btn btn-ghost btn-sm btn-pill" style="margin-top: var(--space-2);" onclick="VHT.toast('Tinh nang dang phat trien', 'info')">Doi anh dai dien</button>
+              </div>
+            </div>
+
+            <form id="profile-form" onsubmit="handleProfileSave(event)">
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5);">
+                <div class="form-group">
+                  <label class="form-label">Ho</label>
+                  <input class="form-input" type="text" value="Nguyen" data-required>
+                  <span class="form-error"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Ten</label>
+                  <input class="form-input" type="text" value="Van A" data-required>
+                  <span class="form-error"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Email</label>
+                <input class="form-input" type="email" value="nguyenvana@email.com" data-required>
+                <span class="form-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">So dien thoai</label>
+                <input class="form-input" type="tel" value="0912 345 678" placeholder="So dien thoai">
+                <span class="form-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Dia chi</label>
+                <input class="form-input" type="text" placeholder="Dia chi nhan hang (tuy chon)">
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-pill" style="margin-top: var(--space-4);">Luu thong tin</button>
+            </form>
+
+          </div>
+        </div>
+
+        <!-- ===== TAB: Payment ===== -->
+        <div class="tab-content" data-tab="payment">
+          <div class="settings-content">
+
+            <h3 class="text-title font-display" style="margin-bottom: var(--space-5);">Ho so thanh toan hien co</h3>
+
+            <div style="display: flex; flex-direction: column; gap: var(--space-3); margin-bottom: var(--space-8);">
+              
+              <div class="payment-card default">
+                <div class="payment-card-left">
+                  <div class="payment-icon" style="background: var(--brand-primary-dim); color: var(--brand-primary);">&#127974;</div>
+                  <div>
+                    <div class="text-caption" style="color: var(--text-primary); font-weight: var(--weight-semibold);">Vietcombank ****4521</div>
+                    <div class="text-small text-muted">Nguyen Van A — Mac dinh</div>
+                  </div>
+                </div>
+                <div class="payment-card-actions">
+                  <span class="badge badge-brand">Mac dinh</span>
+                  <button class="btn btn-ghost btn-sm" onclick="VHT.toast('Chinh sua ho so', 'info')">Sua</button>
+                </div>
+              </div>
+
+              <div class="payment-card">
+                <div class="payment-card-left">
+                  <div class="payment-icon" style="background: var(--state-danger-dim); color: var(--state-danger);">&#128241;</div>
+                  <div>
+                    <div class="text-caption" style="color: var(--text-primary); font-weight: var(--weight-semibold);">MoMo ****1234</div>
+                    <div class="text-small text-muted">Nguyen Van A</div>
+                  </div>
+                </div>
+                <div class="payment-card-actions">
+                  <button class="btn btn-ghost btn-sm" onclick="VHT.toast('Dat lam mac dinh', 'success')">Mac dinh</button>
+                  <button class="btn btn-ghost btn-sm" onclick="VHT.toast('Chinh sua ho so', 'info')">Sua</button>
+                </div>
+              </div>
+
+              <div class="payment-card">
+                <div class="payment-card-left">
+                  <div class="payment-icon" style="background: var(--state-info-dim); color: var(--state-info);">&#128179;</div>
+                  <div>
+                    <div class="text-caption" style="color: var(--text-primary); font-weight: var(--weight-semibold);">ZaloPay ****5678</div>
+                    <div class="text-small text-muted">Nguyen Van A</div>
+                  </div>
+                </div>
+                <div class="payment-card-actions">
+                  <button class="btn btn-ghost btn-sm" onclick="VHT.toast('Dat lam mac dinh', 'success')">Mac dinh</button>
+                  <button class="btn btn-ghost btn-sm" onclick="VHT.toast('Chinh sua ho so', 'info')">Sua</button>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Add new payment form -->
+            <div class="divider"></div>
+            <h3 class="text-title font-display" style="margin-bottom: var(--space-5);">Them ho so moi</h3>
+
+            <form id="payment-form" onsubmit="handlePaymentSave(event)">
+              <div class="form-group">
+                <label class="form-label">Loai tai khoan</label>
+                <select class="form-select" data-required>
+                  <option value="">— Chon loai —</option>
+                  <option value="bank">Ngan hang</option>
+                  <option value="momo">Vi MoMo</option>
+                  <option value="zalopay">Vi ZaloPay</option>
+                </select>
+                <span class="form-error"></span>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Nha cung cap / Ten ngan hang</label>
+                <input class="form-input" type="text" placeholder="VD: Vietcombank, Techcombank..." data-required>
+                <span class="form-error"></span>
+              </div>
+
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-5);">
+                <div class="form-group">
+                  <label class="form-label">Ten chu tai khoan</label>
+                  <input class="form-input" type="text" placeholder="NGUYEN VAN A" data-required>
+                  <span class="form-error"></span>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">So tai khoan</label>
+                  <input class="form-input" type="text" placeholder="So tai khoan / So dien thoai" data-required>
+                  <span class="form-error"></span>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-checkbox">
+                  <input type="checkbox">
+                  <span>Dat lam phuong thuc mac dinh</span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-pill" style="margin-top: var(--space-2);">Luu thong tin thanh toan</button>
+            </form>
+
+          </div>
+        </div>
+
+        <!-- ===== TAB: Security ===== -->
+        <div class="tab-content" data-tab="security">
+          <div class="settings-content">
+
+            <div class="card" style="padding: 0; overflow: hidden;">
+              <div class="security-item">
+                <div>
+                  <div class="text-caption" style="color: var(--text-primary); font-weight: var(--weight-semibold);">Mat khau</div>
+                  <div class="text-small text-muted">Thay doi mat khau dang nhap cua ban</div>
+                </div>
+                <button class="btn btn-ghost btn-sm btn-pill" onclick="VHT.openModal('change-password-modal')">Doi mat khau</button>
+              </div>
+
+              <div class="security-item">
+                <div>
+                  <div class="text-caption" style="color: var(--text-primary); font-weight: var(--weight-semibold);">Xac thuc 2 buoc (2FA)</div>
+                  <div class="text-small text-muted">Tang cuong bao mat voi xac thuc 2 yeu to</div>
+                </div>
+                <button class="btn btn-ghost btn-sm btn-pill" onclick="VHT.toast('Tinh nang dang phat trien', 'info')">Kich hoat</button>
+              </div>
+
+              <div class="security-item">
+                <div>
+                  <div class="text-caption" style="color: var(--text-primary); font-weight: var(--weight-semibold);">Phien dang nhap</div>
+                  <div class="text-small text-muted">Quan ly cac thiet bi da dang nhap</div>
+                </div>
+                <button class="btn btn-ghost btn-sm btn-pill" onclick="VHT.toast('Ban dang dang nhap tren 1 thiet bi', 'info')">Xem chi tiet</button>
+              </div>
+
+              <div class="security-item">
+                <div>
+                  <div class="text-caption" style="color: var(--text-primary); font-weight: var(--weight-semibold);">Dang xuat</div>
+                  <div class="text-small text-muted">Dang xuat khoi tai khoan tren thiet bi nay</div>
+                </div>
+                <button class="btn btn-danger btn-sm btn-pill" onclick="handleLogout()">Dang xuat</button>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ========== CHANGE PASSWORD MODAL ========== -->
+    <div class="modal-overlay" id="change-password-modal">
+      <div class="modal">
+        <div class="modal-header">
+          <h3>Doi mat khau</h3>
+          <button class="modal-close" onclick="VHT.closeModal('change-password-modal')">&times;</button>
+        </div>
+        <div class="modal-body">
+          <form id="change-pw-form" onsubmit="handleChangePassword(event)">
+            <div class="form-group" style="margin-bottom: var(--space-5);">
+              <label class="form-label">Mat khau hien tai</label>
+              <input class="form-input" type="password" placeholder="Nhap mat khau hien tai" data-required>
+              <span class="form-error"></span>
+            </div>
+            <div class="form-group" style="margin-bottom: var(--space-5);">
+              <label class="form-label">Mat khau moi</label>
+              <input class="form-input" type="password" id="new-password" placeholder="Toi thieu 8 ky tu" data-required data-minlength="8">
+              <span class="form-error"></span>
+            </div>
+            <div class="form-group" style="margin-bottom: var(--space-5);">
+              <label class="form-label">Xac nhan mat khau moi</label>
+              <input class="form-input" type="password" placeholder="Nhap lai mat khau moi" data-required data-match="#new-password">
+              <span class="form-error"></span>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button class="btn btn-ghost btn-pill" onclick="VHT.closeModal('change-password-modal')">Huy</button>
+          <button class="btn btn-primary btn-pill" onclick="handleChangePassword(event)">Cap nhat mat khau</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand">VuaHoanTien</div>
+            <p class="footer-desc">Nen tang hoan tien hang dau Viet Nam. San deal, copy ma, mua hang qua link — nhan hoan tien ro rang ve vi cua ban.</p>
+          </div>
+          <div class="footer-col">
+            <h4>San pham</h4>
+            <ul>
+              <li><a href="vouchers.html">Ma giam gia</a></li>
+              <li><a href="index.html">Hoan tien</a></li>
+              <li><a href="wallet.html">Vi tien</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Tai khoan</h4>
+            <ul>
+              <li><a href="register.html">Dang ky</a></li>
+              <li><a href="login.html">Dang nhap</a></li>
+              <li><a href="settings.html">Cai dat</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Ho tro</h4>
+            <ul>
+              <li><a href="#">Huong dan</a></li>
+              <li><a href="#">Lien he</a></li>
+              <li><a href="#">Dieu khoan</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          &copy; 2026 VuaHoanTien. Tat ca quyen duoc bao luu.
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="../js/app.js"></script>
+  <script>
+    function handleProfileSave(e) {
+      e.preventDefault();
+      const form = document.getElementById('profile-form');
+      if (!VHT.validateForm(form)) {
+        VHT.toast('Vui long kiem tra lai thong tin', 'error');
+        return;
+      }
+      VHT.toast('Ho so da duoc cap nhat!', 'success');
+    }
+
+    function handlePaymentSave(e) {
+      e.preventDefault();
+      const form = document.getElementById('payment-form');
+      if (!VHT.validateForm(form)) {
+        VHT.toast('Vui long dien day du thong tin', 'error');
+        return;
+      }
+      VHT.toast('Ho so thanh toan da duoc luu!', 'success');
+      form.reset();
+    }
+
+    function handleChangePassword(e) {
+      e.preventDefault();
+      const form = document.getElementById('change-pw-form');
+      if (!VHT.validateForm(form)) {
+        VHT.toast('Vui long kiem tra lai thong tin', 'error');
+        return;
+      }
+      VHT.closeModal('change-password-modal');
+      VHT.toast('Mat khau da duoc cap nhat thanh cong!', 'success');
+      form.reset();
+    }
+
+    function handleLogout() {
+      localStorage.removeItem('vht_logged_in');
+      VHT.toast('Da dang xuat thanh cong', 'success');
+      setTimeout(() => {
+        window.location.href = 'login.html';
+      }, 800);
+    }
+  </script>
+</body>
+</html>

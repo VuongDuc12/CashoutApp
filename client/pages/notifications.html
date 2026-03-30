@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thong bao — VuaHoanTien</title>
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <style>
+    .notif-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      margin-bottom: var(--space-6);
+    }
+    .notif-header-left {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+    }
+    .notif-count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 24px;
+      height: 24px;
+      padding: 0 6px;
+      border-radius: var(--radius-pill);
+      background: var(--state-danger);
+      color: white;
+      font-size: var(--size-small);
+      font-weight: var(--weight-bold);
+    }
+    .notif-list {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-soft);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+    }
+    .notif-list .notification-item:last-child {
+      border-bottom: none;
+    }
+    .notif-date-header {
+      padding: var(--space-3) var(--space-5);
+      background: var(--bg-elevated);
+      font-size: var(--size-small);
+      font-weight: var(--weight-semibold);
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      border-bottom: 1px solid var(--border-soft);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== TOP NAVIGATION ========== -->
+  <nav class="top-nav">
+    <a href="index.html" class="nav-brand">VuaHoanTien</a>
+    <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Trang chu</a></li>
+      <li><a href="vouchers.html">Ma giam gia</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="orders.html">Don hang</a></li>
+      <li><a href="wallet.html">Vi tien</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="notifications.html" class="nav-icon-btn" title="Thong bao" style="border-color: var(--brand-primary); color: var(--brand-primary);">
+        &#128276;
+        <span class="badge-dot"></span>
+      </a>
+      <a href="settings.html" class="nav-avatar" title="Tai khoan">N</a>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <div class="container" style="max-width: 760px;">
+
+      <!-- ========== HEADER ========== -->
+      <div class="notif-header animate-fade-in-up">
+        <div class="notif-header-left">
+          <h1 class="text-h2 font-display">Thong bao</h1>
+          <span class="notif-count" id="unread-count">4</span>
+        </div>
+        <div style="display: flex; gap: var(--space-3);">
+          <button class="btn btn-ghost btn-sm btn-pill" onclick="markAllRead()">&#10003; Danh dau tat ca da doc</button>
+        </div>
+      </div>
+
+      <!-- ========== FILTER CHIPS ========== -->
+      <div class="chip-group animate-fade-in-up" data-mode="single" style="margin-bottom: var(--space-6);">
+        <button class="chip active" data-value="all">Tat ca</button>
+        <button class="chip" data-value="order">Don hang</button>
+        <button class="chip" data-value="wallet">Vi tien</button>
+        <button class="chip" data-value="promo">Khuyen mai</button>
+        <button class="chip" data-value="system">He thong</button>
+      </div>
+
+      <!-- ========== NOTIFICATION LIST ========== -->
+      <div class="notif-list animate-fade-in-up">
+
+        <!-- Today -->
+        <div class="notif-date-header">Hom nay</div>
+
+        <div class="notification-item unread" onclick="VHT.markAsRead(this)">
+          <div class="notification-icon" style="background: var(--state-success-dim); color: var(--state-success);">&#10003;</div>
+          <div class="notification-body">
+            <div class="notification-title">Don hang #CB-2026031501 da duoc duyet</div>
+            <div class="notification-desc">Hoan tien 125,000 VND da duoc cong vao vi kha dung cua ban. Don hang tu Shopee.</div>
+          </div>
+          <div class="notification-time">2 gio truoc</div>
+        </div>
+
+        <div class="notification-item unread" onclick="VHT.markAsRead(this)">
+          <div class="notification-icon" style="background: var(--state-info-dim); color: var(--state-info);">&#128176;</div>
+          <div class="notification-body">
+            <div class="notification-title">Yeu cau rut tien dang duoc xu ly</div>
+            <div class="notification-desc">Yeu cau rut 500,000 VND ve MoMo ****1234 da duoc tiep nhan. Du kien 1-3 ngay lam viec.</div>
+          </div>
+          <div class="notification-time">5 gio truoc</div>
+        </div>
+
+        <!-- Yesterday -->
+        <div class="notif-date-header">Hom qua</div>
+
+        <div class="notification-item unread" onclick="VHT.markAsRead(this)">
+          <div class="notification-icon" style="background: var(--state-success-dim); color: var(--state-success);">&#128176;</div>
+          <div class="notification-body">
+            <div class="notification-title">Rut tien thanh cong!</div>
+            <div class="notification-desc">500,000 VND da duoc chuyen ve tai khoan MoMo ****1234 thanh cong.</div>
+          </div>
+          <div class="notification-time">Hom qua</div>
+        </div>
+
+        <div class="notification-item unread" onclick="VHT.markAsRead(this)">
+          <div class="notification-icon" style="background: var(--brand-accent-dim); color: var(--brand-accent);">&#127873;</div>
+          <div class="notification-body">
+            <div class="notification-title">Deal cuoi tuan — Nhan x2 hoan tien!</div>
+            <div class="notification-desc">Don hang Shopee & Lazada tu 500K se duoc nhan gap doi hoan tien. Ap dung den het Chu Nhat.</div>
+          </div>
+          <div class="notification-time">Hom qua</div>
+        </div>
+
+        <!-- Earlier -->
+        <div class="notif-date-header">Truoc do</div>
+
+        <div class="notification-item" onclick="VHT.markAsRead(this)">
+          <div class="notification-icon" style="background: var(--state-warning-dim); color: var(--state-warning);">&#9888;</div>
+          <div class="notification-body">
+            <div class="notification-title">Don hang #CB-2026031350 bi tu choi</div>
+            <div class="notification-desc">Don hang Ao khoac Uniqlo da bi tu choi boi san Shopee. Ly do: Don hang bi huy truoc khi hoan tat.</div>
+          </div>
+          <div class="notification-time">3 ngay truoc</div>
+        </div>
+
+        <div class="notification-item" onclick="VHT.markAsRead(this)">
+          <div class="notification-icon" style="background: var(--state-success-dim); color: var(--state-success);">&#10003;</div>
+          <div class="notification-body">
+            <div class="notification-title">Don hang #CB-2026031420 da duoc duyet</div>
+            <div class="notification-desc">Hoan tien 78,000 VND tu Lazada da duoc cong vao vi kha dung.</div>
+          </div>
+          <div class="notification-time">4 ngay truoc</div>
+        </div>
+
+        <div class="notification-item" onclick="VHT.markAsRead(this)">
+          <div class="notification-icon" style="background: var(--state-success-dim); color: var(--state-success);">&#128176;</div>
+          <div class="notification-body">
+            <div class="notification-title">Rut tien thanh cong!</div>
+            <div class="notification-desc">1,000,000 VND da duoc chuyen ve Vietcombank ****4521.</div>
+          </div>
+          <div class="notification-time">1 tuan truoc</div>
+        </div>
+
+        <div class="notification-item" onclick="VHT.markAsRead(this)">
+          <div class="notification-icon" style="background: var(--state-success-dim); color: var(--state-success);">&#10003;</div>
+          <div class="notification-body">
+            <div class="notification-title">Don hang #CB-2026031398 da duoc duyet</div>
+            <div class="notification-desc">Hoan tien 210,000 VND tu Shopee — don Samsung Galaxy S26.</div>
+          </div>
+          <div class="notification-time">1 tuan truoc</div>
+        </div>
+
+        <div class="notification-item" onclick="VHT.markAsRead(this)">
+          <div class="notification-icon" style="background: var(--brand-secondary-dim); color: var(--brand-secondary);">&#128274;</div>
+          <div class="notification-body">
+            <div class="notification-title">Cap nhat bao mat</div>
+            <div class="notification-desc">Mat khau cua ban da duoc thay doi thanh cong. Neu ban khong thuc hien hanh dong nay, vui long lien he ho tro.</div>
+          </div>
+          <div class="notification-time">2 tuan truoc</div>
+        </div>
+
+        <div class="notification-item" onclick="VHT.markAsRead(this)">
+          <div class="notification-icon" style="background: var(--brand-primary-dim); color: var(--brand-primary);">&#127775;</div>
+          <div class="notification-body">
+            <div class="notification-title">Chao mung ban den VuaHoanTien!</div>
+            <div class="notification-desc">Tai khoan cua ban da duoc tao thanh cong. Bat dau san deal va nhan hoan tien ngay!</div>
+          </div>
+          <div class="notification-time">3 tuan truoc</div>
+        </div>
+
+      </div>
+
+      <!-- ========== LOAD MORE ========== -->
+      <div style="text-align: center; margin-top: var(--space-6);">
+        <button class="btn btn-ghost btn-pill" onclick="VHT.toast('Da tai het thong bao', 'info')">Tai them thong bao</button>
+      </div>
+
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand">VuaHoanTien</div>
+            <p class="footer-desc">Nen tang hoan tien hang dau Viet Nam. San deal, copy ma, mua hang qua link — nhan hoan tien ro rang ve vi cua ban.</p>
+          </div>
+          <div class="footer-col">
+            <h4>San pham</h4>
+            <ul>
+              <li><a href="vouchers.html">Ma giam gia</a></li>
+              <li><a href="index.html">Hoan tien</a></li>
+              <li><a href="wallet.html">Vi tien</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Tai khoan</h4>
+            <ul>
+              <li><a href="register.html">Dang ky</a></li>
+              <li><a href="login.html">Dang nhap</a></li>
+              <li><a href="settings.html">Cai dat</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Ho tro</h4>
+            <ul>
+              <li><a href="#">Huong dan</a></li>
+              <li><a href="#">Lien he</a></li>
+              <li><a href="#">Dieu khoan</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          &copy; 2026 VuaHoanTien. Tat ca quyen duoc bao luu.
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="../js/app.js"></script>
+  <script>
+    function markAllRead() {
+      const items = document.querySelectorAll('.notification-item.unread');
+      items.forEach(item => {
+        item.classList.remove('unread');
+      });
+      const countEl = document.getElementById('unread-count');
+      if (countEl) {
+        countEl.textContent = '0';
+        countEl.style.background = 'var(--text-muted)';
+      }
+      VHT.toast('Da danh dau tat ca thong bao la da doc', 'success');
+    }
+  </script>
+</body>
+</html>

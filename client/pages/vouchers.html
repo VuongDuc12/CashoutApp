@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ma giam gia — VuaHoanTien</title>
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+
+  <!-- ========== TOP NAVIGATION ========== -->
+  <nav class="top-nav">
+    <a href="index.html" class="nav-brand">VuaHoanTien</a>
+    <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Trang chu</a></li>
+      <li><a href="vouchers.html" class="active">Ma giam gia</a></li>
+      <li><a href="dashboard.html" data-auth-required>Dashboard</a></li>
+      <li><a href="orders.html" data-auth-required>Don hang</a></li>
+      <li><a href="wallet.html" data-auth-required>Vi tien</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="notifications.html" class="nav-icon-btn" title="Thong bao" data-auth-required>&#128276;<span class="badge-dot"></span></a>
+      <a href="login.html" class="btn btn-ghost btn-sm btn-pill">Dang nhap</a>
+      <a href="register.html" class="btn btn-primary btn-sm btn-pill">Dang ky</a>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <div class="container-wide">
+
+      <!-- ========== HEADER ========== -->
+      <div class="flex justify-between items-center mb-6 animate-fade-in-up">
+        <div>
+          <h1 class="text-h1 font-display">Ma giam gia</h1>
+          <p class="text-caption text-muted mt-2">Tim ma giam gia hot nhat tu Shopee & Lazada</p>
+        </div>
+      </div>
+
+      <!-- ========== FILTER CHIPS ========== -->
+      <div class="chip-group flex gap-3 flex-wrap mb-6 animate-fade-in-up" data-mode="single">
+        <button class="chip active" data-value="all">Tat ca</button>
+        <button class="chip" data-value="shopee">&#9679; Shopee</button>
+        <button class="chip" data-value="lazada">&#9679; Lazada</button>
+        <button class="chip" data-value="hot">&#128293; Hot</button>
+        <button class="chip" data-value="freeship">&#128666; Free Ship</button>
+        <button class="chip" data-value="new">&#127381; Moi nhat</button>
+      </div>
+
+      <div class="flex gap-8" style="align-items: flex-start;">
+
+        <!-- ========== SIDEBAR FILTER ========== -->
+        <aside class="sidebar-filter animate-slide-right">
+          <div class="card" style="padding: var(--space-5);">
+            <div class="sidebar-section">
+              <h4>San thuong mai</h4>
+              <label class="sidebar-option"><input type="checkbox" checked> Shopee</label>
+              <label class="sidebar-option"><input type="checkbox" checked> Lazada</label>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="sidebar-section">
+              <h4>Muc giam</h4>
+              <label class="sidebar-option"><input type="radio" name="discount" checked> Tat ca</label>
+              <label class="sidebar-option"><input type="radio" name="discount"> Duoi 50K</label>
+              <label class="sidebar-option"><input type="radio" name="discount"> 50K - 100K</label>
+              <label class="sidebar-option"><input type="radio" name="discount"> 100K - 200K</label>
+              <label class="sidebar-option"><input type="radio" name="discount"> Tren 200K</label>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="sidebar-section">
+              <h4>Nganh hang</h4>
+              <label class="sidebar-option"><input type="checkbox"> Thoi trang</label>
+              <label class="sidebar-option"><input type="checkbox"> Dien tu</label>
+              <label class="sidebar-option"><input type="checkbox"> Gia dung</label>
+              <label class="sidebar-option"><input type="checkbox"> Suc khoe & Lam dep</label>
+              <label class="sidebar-option"><input type="checkbox"> The thao</label>
+              <label class="sidebar-option"><input type="checkbox"> Sach</label>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="sidebar-section">
+              <h4>Thoi han</h4>
+              <label class="sidebar-option"><input type="radio" name="expire" checked> Tat ca</label>
+              <label class="sidebar-option"><input type="radio" name="expire"> Con 1 ngay</label>
+              <label class="sidebar-option"><input type="radio" name="expire"> Con 3 ngay</label>
+              <label class="sidebar-option"><input type="radio" name="expire"> Con 7 ngay</label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- ========== VOUCHER GRID ========== -->
+        <div style="flex: 1;">
+          <div class="grid-3 gap-5 stagger" id="voucher-grid">
+
+            <div class="voucher-card animate-fade-in-up" onclick="window.location.href='voucher-detail.html'">
+              <span class="voucher-badge shopee">&#9679; Shopee</span>
+              <div class="voucher-discount">Giam 80K</div>
+              <div class="voucher-title">Don tu 400K — Tat ca nganh hang</div>
+              <div class="voucher-code"><span>SHOPEE80K</span></div>
+              <div class="voucher-meta">
+                <span>&#128339; Con 2 ngay</span>
+                <span>&#128293; 1.2K da dung</span>
+              </div>
+              <div class="voucher-actions">
+                <button class="btn btn-primary btn-sm btn-pill" style="flex:1" onclick="event.stopPropagation(); VHT.copyCode('SHOPEE80K', this)">Copy ma</button>
+                <button class="btn btn-ghost btn-sm btn-pill" onclick="event.stopPropagation(); VHT.toast('Dang mo Shopee...', 'info')">Dung ngay</button>
+              </div>
+            </div>
+
+            <div class="voucher-card animate-fade-in-up" onclick="window.location.href='voucher-detail.html'">
+              <span class="voucher-badge lazada">&#9679; Lazada</span>
+              <div class="voucher-discount">Giam 15%</div>
+              <div class="voucher-title">Toi da 200K — Dien tu & Phu kien</div>
+              <div class="voucher-code"><span>LAZADA15PCT</span></div>
+              <div class="voucher-meta">
+                <span>&#128339; Con 5 ngay</span>
+                <span>&#128293; 856 da dung</span>
+              </div>
+              <div class="voucher-actions">
+                <button class="btn btn-primary btn-sm btn-pill" style="flex:1" onclick="event.stopPropagation(); VHT.copyCode('LAZADA15PCT', this)">Copy ma</button>
+                <button class="btn btn-ghost btn-sm btn-pill" onclick="event.stopPropagation(); VHT.toast('Dang mo Lazada...', 'info')">Dung ngay</button>
+              </div>
+            </div>
+
+            <div class="voucher-card animate-fade-in-up" onclick="window.location.href='voucher-detail.html'">
+              <span class="voucher-badge shopee">&#9679; Shopee</span>
+              <div class="voucher-discount">Free Ship</div>
+              <div class="voucher-title">Mien phi van chuyen — Toan quoc</div>
+              <div class="voucher-code"><span>FREESHIP0D</span></div>
+              <div class="voucher-meta">
+                <span>&#128339; Con 1 ngay</span>
+                <span>&#128293; 3.5K da dung</span>
+              </div>
+              <div class="voucher-actions">
+                <button class="btn btn-primary btn-sm btn-pill" style="flex:1" onclick="event.stopPropagation(); VHT.copyCode('FREESHIP0D', this)">Copy ma</button>
+                <button class="btn btn-ghost btn-sm btn-pill" onclick="event.stopPropagation(); VHT.toast('Dang mo Shopee...', 'info')">Dung ngay</button>
+              </div>
+            </div>
+
+            <div class="voucher-card animate-fade-in-up" onclick="window.location.href='voucher-detail.html'">
+              <span class="voucher-badge shopee">&#9679; Shopee</span>
+              <div class="voucher-discount">Giam 50K</div>
+              <div class="voucher-title">Don tu 250K — Thoi trang</div>
+              <div class="voucher-code"><span>FASHION50K</span></div>
+              <div class="voucher-meta"><span>&#128339; Con 3 ngay</span></div>
+              <div class="voucher-actions">
+                <button class="btn btn-primary btn-sm btn-pill" style="flex:1" onclick="event.stopPropagation(); VHT.copyCode('FASHION50K', this)">Copy ma</button>
+                <button class="btn btn-ghost btn-sm btn-pill" onclick="event.stopPropagation();">Dung ngay</button>
+              </div>
+            </div>
+
+            <div class="voucher-card animate-fade-in-up" onclick="window.location.href='voucher-detail.html'">
+              <span class="voucher-badge lazada">&#9679; Lazada</span>
+              <div class="voucher-discount">Giam 120K</div>
+              <div class="voucher-title">Don tu 600K — Do gia dung</div>
+              <div class="voucher-code"><span>HOME120K</span></div>
+              <div class="voucher-meta"><span>&#128339; Con 1 ngay</span></div>
+              <div class="voucher-actions">
+                <button class="btn btn-primary btn-sm btn-pill" style="flex:1" onclick="event.stopPropagation(); VHT.copyCode('HOME120K', this)">Copy ma</button>
+                <button class="btn btn-ghost btn-sm btn-pill" onclick="event.stopPropagation();">Dung ngay</button>
+              </div>
+            </div>
+
+            <div class="voucher-card animate-fade-in-up" onclick="window.location.href='voucher-detail.html'">
+              <span class="voucher-badge shopee">&#9679; Shopee</span>
+              <div class="voucher-discount">Giam 30%</div>
+              <div class="voucher-title">Toi da 100K — Suc khoe & Lam dep</div>
+              <div class="voucher-code"><span>BEAUTY30P</span></div>
+              <div class="voucher-meta"><span>&#128339; Con 4 ngay</span></div>
+              <div class="voucher-actions">
+                <button class="btn btn-primary btn-sm btn-pill" style="flex:1" onclick="event.stopPropagation(); VHT.copyCode('BEAUTY30P', this)">Copy ma</button>
+                <button class="btn btn-ghost btn-sm btn-pill" onclick="event.stopPropagation();">Dung ngay</button>
+              </div>
+            </div>
+
+            <div class="voucher-card animate-fade-in-up" onclick="window.location.href='voucher-detail.html'">
+              <span class="voucher-badge lazada">&#9679; Lazada</span>
+              <div class="voucher-discount">Giam 200K</div>
+              <div class="voucher-title">Don tu 1 trieu — Dien tu</div>
+              <div class="voucher-code"><span>TECH200K</span></div>
+              <div class="voucher-meta"><span>&#128339; Con 7 ngay</span></div>
+              <div class="voucher-actions">
+                <button class="btn btn-primary btn-sm btn-pill" style="flex:1" onclick="event.stopPropagation(); VHT.copyCode('TECH200K', this)">Copy ma</button>
+                <button class="btn btn-ghost btn-sm btn-pill" onclick="event.stopPropagation();">Dung ngay</button>
+              </div>
+            </div>
+
+            <div class="voucher-card animate-fade-in-up" onclick="window.location.href='voucher-detail.html'">
+              <span class="voucher-badge shopee">&#9679; Shopee</span>
+              <div class="voucher-discount">Giam 40K</div>
+              <div class="voucher-title">Don tu 199K — Sach & Van phong pham</div>
+              <div class="voucher-code"><span>BOOK40K</span></div>
+              <div class="voucher-meta"><span>&#128339; Con 6 ngay</span></div>
+              <div class="voucher-actions">
+                <button class="btn btn-primary btn-sm btn-pill" style="flex:1" onclick="event.stopPropagation(); VHT.copyCode('BOOK40K', this)">Copy ma</button>
+                <button class="btn btn-ghost btn-sm btn-pill" onclick="event.stopPropagation();">Dung ngay</button>
+              </div>
+            </div>
+
+            <div class="voucher-card animate-fade-in-up" onclick="window.location.href='voucher-detail.html'">
+              <span class="voucher-badge lazada">&#9679; Lazada</span>
+              <div class="voucher-discount">Giam 10%</div>
+              <div class="voucher-title">Toi da 50K — The thao & Du lich</div>
+              <div class="voucher-code"><span>SPORT10P</span></div>
+              <div class="voucher-meta"><span>&#128339; Con 2 ngay</span></div>
+              <div class="voucher-actions">
+                <button class="btn btn-primary btn-sm btn-pill" style="flex:1" onclick="event.stopPropagation(); VHT.copyCode('SPORT10P', this)">Copy ma</button>
+                <button class="btn btn-ghost btn-sm btn-pill" onclick="event.stopPropagation();">Dung ngay</button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Pagination -->
+          <div class="pagination mt-8">
+            <button class="page-btn">&laquo;</button>
+            <button class="page-btn active">1</button>
+            <button class="page-btn">2</button>
+            <button class="page-btn">3</button>
+            <button class="page-btn">4</button>
+            <button class="page-btn">&raquo;</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-bottom">
+          &copy; 2026 VuaHoanTien. Tat ca quyen duoc bao luu.
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

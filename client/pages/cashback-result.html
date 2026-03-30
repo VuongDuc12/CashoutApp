@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ket qua tao link — VuaHoanTien</title>
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+
+  <nav class="top-nav">
+    <a href="index.html" class="nav-brand">VuaHoanTien</a>
+    <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Trang chu</a></li>
+      <li><a href="vouchers.html">Ma giam gia</a></li>
+      <li><a href="dashboard.html" data-auth-required>Dashboard</a></li>
+      <li><a href="orders.html" data-auth-required>Don hang</a></li>
+      <li><a href="wallet.html" data-auth-required>Vi tien</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="notifications.html" class="nav-icon-btn" data-auth-required>&#128276;</a>
+      <a href="login.html" class="btn btn-ghost btn-sm btn-pill">Dang nhap</a>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <div class="container" style="max-width: 960px;">
+
+      <!-- ========== STEPPER ========== -->
+      <div class="stepper animate-fade-in-up">
+        <div class="step completed">
+          <span class="step-num">&#10003;</span>
+          <span>Dan link</span>
+        </div>
+        <div class="step-line completed"></div>
+        <div class="step completed">
+          <span class="step-num">&#10003;</span>
+          <span>Kiem tra</span>
+        </div>
+        <div class="step-line completed"></div>
+        <div class="step active">
+          <span class="step-num">3</span>
+          <span>Mua ngay</span>
+        </div>
+      </div>
+
+      <!-- ========== RESULT CARDS ========== -->
+      <div class="grid-3 gap-6 stagger mb-8">
+
+        <!-- Product Preview -->
+        <div class="card animate-fade-in-up" style="padding: var(--space-6);">
+          <div style="width: 100%; height: 180px; background: var(--bg-elevated); border-radius: var(--radius-md); margin-bottom: var(--space-4); display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+            &#128247;
+          </div>
+          <span class="voucher-badge shopee mb-3">&#9679; Shopee</span>
+          <h3 class="text-title mb-2">Tai nghe Bluetooth Sony WH-1000XM5</h3>
+          <p class="text-caption text-muted mb-3">Tai nghe chong on chu dong, pin 30 gio, ket noi da diem</p>
+          <div class="text-h3 font-display text-primary">6.490.000 <span class="text-caption text-muted">VND</span></div>
+        </div>
+
+        <!-- Cashback Estimate -->
+        <div class="card card-glow-accent animate-fade-in-up" style="padding: var(--space-6); border-color: rgba(255,214,107,0.3);">
+          <div style="font-size: 2.5rem; margin-bottom: var(--space-4);">&#128176;</div>
+          <h3 class="text-title mb-3">Du kien hoan tien</h3>
+          <div class="text-h2 font-display text-accent mb-4" data-counter="194700" style="font-size: var(--size-h1);">0</div>
+          <div class="text-caption text-secondary mb-2">VND</div>
+
+          <div class="divider"></div>
+
+          <div class="flex flex-col gap-3">
+            <div class="flex justify-between text-caption">
+              <span class="text-muted">Hoa hong nen tang</span>
+              <span class="text-secondary">278.200 VND</span>
+            </div>
+            <div class="flex justify-between text-caption">
+              <span class="text-muted">Ti le chia cho ban</span>
+              <span class="text-brand">70%</span>
+            </div>
+            <div class="flex justify-between text-caption">
+              <span class="text-muted">Cashback du kien</span>
+              <span class="text-accent text-bold">194.700 VND</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="text-small text-muted">
+            &#9888; Cashback se duoc cong vao vi sau 15-30 ngay khi don hang xac nhan thanh cong.
+          </div>
+        </div>
+
+        <!-- Trust Card -->
+        <div class="card animate-fade-in-up" style="padding: var(--space-6);">
+          <div style="font-size: 2.5rem; margin-bottom: var(--space-4);">&#128274;</div>
+          <h3 class="text-title mb-4">An toan & Theo doi</h3>
+
+          <div class="flex flex-col gap-4">
+            <div class="flex items-center gap-3">
+              <span class="text-success" style="font-size: 1.25rem;">&#10003;</span>
+              <div>
+                <div class="text-caption text-semibold">Link da duoc xac minh</div>
+                <div class="text-small text-muted">URL san pham hop le va duoc ho tro</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-success" style="font-size: 1.25rem;">&#10003;</span>
+              <div>
+                <div class="text-caption text-semibold">Tracking affiliate da san sang</div>
+                <div class="text-small text-muted">Moi giao dich se duoc ghi nhan</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-success" style="font-size: 1.25rem;">&#10003;</span>
+              <div>
+                <div class="text-caption text-semibold">Gia san pham khong thay doi</div>
+                <div class="text-small text-muted">Ban tra dung gia goc, hoan tien la phan thuong</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-info" style="font-size: 1.25rem;">&#8505;</span>
+              <div>
+                <div class="text-caption text-semibold">Dang nhap de luu lich su</div>
+                <div class="text-small text-muted">Don hang se duoc theo doi trong vi cua ban</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ========== CTA BUTTONS ========== -->
+      <div class="card card-glass animate-scale-in" style="padding: var(--space-8); text-align: center; background: linear-gradient(135deg, rgba(91,231,196,0.08), rgba(124,140,255,0.08));">
+        <h2 class="text-h3 font-display mb-4">San sang mua hang?</h2>
+        <p class="text-caption text-secondary mb-6">Bam nut ben duoi de mo ung dung voi link hoan tien da tao</p>
+        <div class="flex gap-4 justify-center flex-wrap">
+          <button class="btn btn-primary btn-lg" onclick="VHT.toast('Dang chuyen huong den Shopee...', 'success')" style="min-width: 220px;">
+            &#128722; MUA NGAY QUA VUAHOANTIEN
+          </button>
+          <button class="btn btn-secondary btn-lg" onclick="VHT.toast('Dang mo Shopee App...', 'info')" style="min-width: 180px;">
+            &#128241; MO BANG APP
+          </button>
+          <button class="btn btn-ghost btn-lg" onclick="VHT.toast('Dang mo trang web...', 'info')" style="min-width: 180px;">
+            &#127760; FALLBACK WEB
+          </button>
+        </div>
+      </div>
+
+      <!-- Info Note -->
+      <div class="card mt-6" style="padding: var(--space-5);">
+        <div class="flex gap-4 items-start">
+          <span style="font-size: 1.5rem;">&#128161;</span>
+          <div>
+            <div class="text-caption text-semibold mb-1">Luu y quan trong</div>
+            <div class="text-small text-muted">
+              Sau khi chuyen sang app/web Shopee, hay hoan tat thanh toan trong phien mua do. Hoan tien se duoc ghi nhan sau 15-30 ngay khi don hang khong bi hoan tra. <a href="register.html">Dang ky tai khoan</a> de theo doi don hang va rut tien ve vi.
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <footer class="site-footer">
+      <div class="container"><div class="footer-bottom">&copy; 2026 VuaHoanTien. Tat ca quyen duoc bao luu.</div></div>
+    </footer>
+  </div>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

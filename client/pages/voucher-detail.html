@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiet voucher — VuaHoanTien</title>
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+
+  <nav class="top-nav">
+    <a href="index.html" class="nav-brand">VuaHoanTien</a>
+    <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Trang chu</a></li>
+      <li><a href="vouchers.html" class="active">Ma giam gia</a></li>
+      <li><a href="dashboard.html" data-auth-required>Dashboard</a></li>
+      <li><a href="orders.html" data-auth-required>Don hang</a></li>
+      <li><a href="wallet.html" data-auth-required>Vi tien</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="notifications.html" class="nav-icon-btn" data-auth-required>&#128276;<span class="badge-dot"></span></a>
+      <a href="login.html" class="btn btn-ghost btn-sm btn-pill">Dang nhap</a>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <div class="container">
+
+      <!-- Breadcrumb -->
+      <div class="flex gap-2 items-center text-caption text-muted mb-6 animate-fade-in">
+        <a href="index.html">Trang chu</a>
+        <span>/</span>
+        <a href="vouchers.html">Ma giam gia</a>
+        <span>/</span>
+        <span class="text-primary">Shopee — Giam 80K don tu 400K</span>
+      </div>
+
+      <div class="grid-2 gap-8" style="align-items: flex-start;">
+
+        <!-- Left: Voucher Description -->
+        <div class="animate-fade-in-up">
+          <div class="card" style="padding: var(--space-8);">
+            <div class="flex items-center gap-3 mb-4">
+              <span class="voucher-badge shopee" style="font-size: var(--size-caption);">&#9679; Shopee</span>
+              <span class="badge badge-accent">&#128293; Hot</span>
+            </div>
+            <h1 class="text-h2 font-display mb-4">Giam 80K cho don tu 400K — Tat ca nganh hang</h1>
+            <p class="text-body text-secondary mb-6">Ma giam gia Shopee ap dung cho tat ca nganh hang. Don toi thieu 400.000 VND. Chi ap dung cho san pham trong nuoc. Moi tai khoan su dung 1 lan.</p>
+
+            <div class="divider"></div>
+
+            <h3 class="text-title mb-4">Dieu kien ap dung</h3>
+            <ul style="list-style: none; display: flex; flex-direction: column; gap: var(--space-3);">
+              <li class="flex items-center gap-3 text-caption text-secondary">
+                <span class="text-success">&#10003;</span> Don hang toi thieu 400.000 VND
+              </li>
+              <li class="flex items-center gap-3 text-caption text-secondary">
+                <span class="text-success">&#10003;</span> Ap dung cho tat ca nganh hang
+              </li>
+              <li class="flex items-center gap-3 text-caption text-secondary">
+                <span class="text-success">&#10003;</span> Moi tai khoan su dung 1 lan
+              </li>
+              <li class="flex items-center gap-3 text-caption text-secondary">
+                <span class="text-success">&#10003;</span> Khong ket hop voi ma giam gia khac
+              </li>
+              <li class="flex items-center gap-3 text-caption text-secondary">
+                <span class="text-warning">&#9888;</span> Chi ap dung san pham trong nuoc
+              </li>
+            </ul>
+
+            <div class="divider"></div>
+
+            <h3 class="text-title mb-4">Khung gio vang</h3>
+            <div class="flex gap-4 flex-wrap">
+              <div class="card-elevated p-4" style="border-radius: var(--radius-md); text-align: center;">
+                <div class="text-small text-muted">Bat dau</div>
+                <div class="text-title text-brand font-display">00:00</div>
+                <div class="text-small text-muted">25/03/2026</div>
+              </div>
+              <div class="card-elevated p-4" style="border-radius: var(--radius-md); text-align: center;">
+                <div class="text-small text-muted">Ket thuc</div>
+                <div class="text-title text-danger font-display">23:59</div>
+                <div class="text-small text-muted">27/03/2026</div>
+              </div>
+              <div class="card-elevated p-4" style="border-radius: var(--radius-md); text-align: center;">
+                <div class="text-small text-muted">Da su dung</div>
+                <div class="text-title text-accent font-display">1,247</div>
+                <div class="text-small text-muted">luot</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Merchant Banner -->
+          <div class="card mt-6" style="padding: var(--space-6); background: linear-gradient(135deg, rgba(255,87,34,0.08), rgba(255,214,107,0.05));">
+            <div class="flex items-center gap-4">
+              <div style="width: 56px; height: 56px; border-radius: var(--radius-md); background: rgba(255,87,34,0.15); display: flex; align-items: center; justify-content: center; font-size: 1.5rem;">&#128722;</div>
+              <div>
+                <h3 class="text-title">Shopee Official</h3>
+                <p class="text-caption text-muted">San thuong mai dien tu hang dau Dong Nam A</p>
+              </div>
+              <a href="vouchers.html" class="btn btn-ghost btn-sm btn-pill" style="margin-left: auto;">Xem them ma &#8594;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Code & CTA -->
+        <div class="animate-slide-right">
+          <div class="card card-glow" style="padding: var(--space-8); position: sticky; top: calc(var(--nav-height) + var(--space-6));">
+            <div class="text-center mb-6">
+              <div class="text-small text-muted mb-2">Ma giam gia</div>
+              <div style="padding: var(--space-4); background: var(--bg-elevated); border: 2px dashed var(--brand-primary); border-radius: var(--radius-md); font-family: monospace; font-size: var(--size-h3); color: var(--brand-primary); letter-spacing: 3px; font-weight: var(--weight-bold);">
+                SHOPEE80K
+              </div>
+            </div>
+
+            <div class="flex gap-3 mb-6" style="flex-direction: column;">
+              <button class="btn btn-primary btn-lg w-full" onclick="VHT.copyCode('SHOPEE80K', this)" style="font-size: var(--size-title);">
+                &#128203; COPY MA
+              </button>
+              <button class="btn btn-accent btn-lg w-full" onclick="VHT.toast('Dang mo Shopee app...', 'info')" style="font-size: var(--size-title);">
+                &#9889; DUNG NGAY
+              </button>
+            </div>
+
+            <div class="flex gap-4 justify-center text-caption text-muted">
+              <span>&#128339; Con 2 ngay</span>
+              <span>|</span>
+              <span>&#128293; 1,247 da dung</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="text-center text-caption text-muted">
+              <p>Khi bam "Copy ma" hoac "Dung ngay", ban se duoc chuyen huong den Shopee qua link affiliate cua VuaHoanTien.</p>
+            </div>
+          </div>
+
+          <!-- Trust Banner -->
+          <div class="card mt-6" style="padding: var(--space-5);">
+            <div class="flex gap-4 items-center">
+              <span style="font-size: 1.5rem;">&#128274;</span>
+              <div>
+                <div class="text-caption text-semibold">An toan & Minh bach</div>
+                <div class="text-small text-muted">Link affiliate duoc tao tu dong, khong anh huong gia san pham.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ========== RELATED VOUCHERS ========== -->
+      <section class="mt-8">
+        <div class="flex justify-between items-center mb-6">
+          <h2 class="text-h3 font-display">Voucher tuong tu</h2>
+          <a href="vouchers.html" class="btn btn-ghost btn-sm btn-pill">Xem tat ca &#8594;</a>
+        </div>
+        <div class="grid-4 gap-5 stagger">
+          <div class="voucher-card animate-fade-in-up" onclick="window.location.href='voucher-detail.html'">
+            <span class="voucher-badge shopee">&#9679; Shopee</span>
+            <div class="voucher-discount">Giam 50K</div>
+            <div class="voucher-title">Don tu 250K — Thoi trang</div>
+            <div class="voucher-actions">
+              <button class="btn btn-primary btn-sm btn-pill w-full" onclick="event.stopPropagation(); VHT.copyCode('FASHION50K', this)">Copy ma</button>
+            </div>
+          </div>
+          <div class="voucher-card animate-fade-in-up" onclick="window.location.href='voucher-detail.html'">
+            <span class="voucher-badge lazada">&#9679; Lazada</span>
+            <div class="voucher-discount">Giam 120K</div>
+            <div class="voucher-title">Don tu 600K — Do gia dung</div>
+            <div class="voucher-actions">
+              <button class="btn btn-primary btn-sm btn-pill w-full" onclick="event.stopPropagation(); VHT.copyCode('HOME120K', this)">Copy ma</button>
+            </div>
+          </div>
+          <div class="voucher-card animate-fade-in-up" onclick="window.location.href='voucher-detail.html'">
+            <span class="voucher-badge shopee">&#9679; Shopee</span>
+            <div class="voucher-discount">Free Ship</div>
+            <div class="voucher-title">Mien phi van chuyen — Toan quoc</div>
+            <div class="voucher-actions">
+              <button class="btn btn-primary btn-sm btn-pill w-full" onclick="event.stopPropagation(); VHT.copyCode('FREESHIP0D', this)">Copy ma</button>
+            </div>
+          </div>
+          <div class="voucher-card animate-fade-in-up" onclick="window.location.href='voucher-detail.html'">
+            <span class="voucher-badge lazada">&#9679; Lazada</span>
+            <div class="voucher-discount">Giam 15%</div>
+            <div class="voucher-title">Toi da 200K — Dien tu</div>
+            <div class="voucher-actions">
+              <button class="btn btn-primary btn-sm btn-pill w-full" onclick="event.stopPropagation(); VHT.copyCode('LAZADA15PCT', this)">Copy ma</button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <footer class="site-footer">
+      <div class="container"><div class="footer-bottom">&copy; 2026 VuaHoanTien. Tat ca quyen duoc bao luu.</div></div>
+    </footer>
+  </div>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

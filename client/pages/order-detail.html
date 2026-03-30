@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chi tiet don hang — VuaHoanTien</title>
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <style>
+    .order-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--space-4);
+      margin-bottom: var(--space-6);
+    }
+    .order-header-left {
+      display: flex;
+      align-items: center;
+      gap: var(--space-4);
+    }
+    .order-id {
+      font-family: monospace;
+      font-size: var(--size-h3);
+      font-weight: var(--weight-bold);
+      color: var(--brand-primary);
+    }
+    .order-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-6);
+    }
+    @media (max-width: 768px) {
+      .order-layout { grid-template-columns: 1fr; }
+    }
+    .amount-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-3) 0;
+      border-bottom: 1px solid var(--border-soft);
+      font-size: var(--size-caption);
+    }
+    .amount-row:last-child { border-bottom: none; }
+    .amount-row .label { color: var(--text-muted); }
+    .amount-row .value {
+      font-family: var(--font-display);
+      font-weight: var(--weight-bold);
+      color: var(--text-primary);
+    }
+    .amount-row.highlight .value {
+      font-size: var(--size-h3);
+      color: var(--state-success);
+    }
+    .product-preview {
+      display: flex;
+      gap: var(--space-4);
+      padding: var(--space-5);
+      background: var(--bg-elevated);
+      border-radius: var(--radius-md);
+      margin-bottom: var(--space-6);
+    }
+    .product-preview-img {
+      width: 80px;
+      height: 80px;
+      border-radius: var(--radius-sm);
+      background: var(--bg-surface);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+    .product-preview-info {
+      display: flex;
+      flex-direction: column;
+      gap: var(--space-1);
+    }
+    .note-card {
+      background: var(--state-warning-dim);
+      border: 1px solid rgba(255, 182, 72, 0.2);
+      border-radius: var(--radius-md);
+      padding: var(--space-4);
+      margin-top: var(--space-4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== TOP NAVIGATION ========== -->
+  <nav class="top-nav">
+    <a href="index.html" class="nav-brand">VuaHoanTien</a>
+    <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Trang chu</a></li>
+      <li><a href="vouchers.html">Ma giam gia</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="orders.html" class="active">Don hang</a></li>
+      <li><a href="wallet.html">Vi tien</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="notifications.html" class="nav-icon-btn" title="Thong bao">
+        &#128276;
+        <span class="badge-dot"></span>
+      </a>
+      <a href="settings.html" class="nav-avatar" title="Tai khoan">N</a>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <div class="container">
+
+      <!-- ========== BREADCRUMB ========== -->
+      <nav class="animate-fade-in-up" style="margin-bottom: var(--space-6);">
+        <div style="display: flex; align-items: center; gap: var(--space-2); font-size: var(--size-caption); color: var(--text-muted);">
+          <a href="dashboard.html" style="color: var(--text-muted);">Dashboard</a>
+          <span>&#8250;</span>
+          <a href="orders.html" style="color: var(--text-muted);">Don hang</a>
+          <span>&#8250;</span>
+          <span style="color: var(--text-primary);">CB-2026031501</span>
+        </div>
+      </nav>
+
+      <!-- ========== ORDER HEADER ========== -->
+      <div class="order-header animate-fade-in-up">
+        <div class="order-header-left">
+          <div>
+            <div class="order-id">CB-2026031501</div>
+            <div style="display: flex; align-items: center; gap: var(--space-3); margin-top: var(--space-2);">
+              <span class="badge badge-success">Da duyet</span>
+              <span class="badge" style="background: rgba(255,87,34,0.15); color: #FF5722;">Shopee</span>
+              <span class="text-small text-muted">Tao luc 15/03/2026 14:32</span>
+            </div>
+          </div>
+        </div>
+        <a href="orders.html" class="btn btn-ghost btn-sm btn-pill">&#8592; Quay lai danh sach</a>
+      </div>
+
+      <!-- ========== PRODUCT PREVIEW ========== -->
+      <div class="product-preview animate-fade-in-up">
+        <div class="product-preview-img">&#127911;</div>
+        <div class="product-preview-info">
+          <div class="text-title" style="color: var(--text-primary);">Tai nghe Bluetooth Sony WH-1000XM5</div>
+          <div class="text-caption text-muted">Shopee — San pham #SP2026031501</div>
+          <div style="margin-top: var(--space-2);">
+            <a href="#" class="text-small" style="color: var(--brand-primary);" onclick="VHT.toast('Dang mo link san pham...', 'info'); return false;">Xem san pham goc &#8594;</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ========== 2-COLUMN LAYOUT ========== -->
+      <div class="order-layout">
+
+        <!-- Left: Timeline -->
+        <div class="card animate-fade-in-up">
+          <h3 class="text-title font-display" style="margin-bottom: var(--space-5);">Tien trinh don hang</h3>
+          <div class="timeline">
+            <div class="timeline-item completed">
+              <div class="timeline-title">Click tracking</div>
+              <div class="timeline-desc">Nguoi dung da click vao link hoan tien va duoc chuyen sang Shopee.</div>
+              <div class="timeline-time">15/03/2026 — 14:32</div>
+            </div>
+            <div class="timeline-item completed">
+              <div class="timeline-title">Don hang da duoc ghi nhan (Tracked)</div>
+              <div class="timeline-desc">He thong affiliate ghi nhan don hang thanh cong tu Shopee.</div>
+              <div class="timeline-time">15/03/2026 — 14:45</div>
+            </div>
+            <div class="timeline-item completed">
+              <div class="timeline-title">Cho xu ly (Pending)</div>
+              <div class="timeline-desc">Don hang dang cho san thuong mai xac nhan va doi soat hoa hong.</div>
+              <div class="timeline-time">15/03/2026 — 15:00</div>
+            </div>
+            <div class="timeline-item completed">
+              <div class="timeline-title">Da duyet (Approved) &#10003;</div>
+              <div class="timeline-desc">Hoa hong da duoc xac nhan. 125,000 VND da duoc cong vao vi kha dung cua ban.</div>
+              <div class="timeline-time">20/03/2026 — 09:15</div>
+            </div>
+          </div>
+
+          <!-- Note for mismatch -->
+          <div class="note-card" style="display: none;">
+            <div style="display: flex; align-items: center; gap: var(--space-2); margin-bottom: var(--space-2);">
+              <span style="color: var(--state-warning);">&#9888;</span>
+              <span class="text-caption" style="color: var(--state-warning); font-weight: var(--weight-semibold);">Luu y chenh lech</span>
+            </div>
+            <p class="text-small text-muted">So tien hoan tien cuoi cung co the thay doi so voi du kien do san thuong mai dieu chinh.</p>
+          </div>
+        </div>
+
+        <!-- Right: Amount Summary -->
+        <div class="card animate-fade-in-up">
+          <h3 class="text-title font-display" style="margin-bottom: var(--space-5);">Thong tin tai chinh</h3>
+          
+          <div class="amount-row">
+            <span class="label">Gia tri don hang</span>
+            <span class="value">1,250,000 VND</span>
+          </div>
+          <div class="amount-row">
+            <span class="label">Ty le hoan tien</span>
+            <span class="value" style="color: var(--brand-primary);">10%</span>
+          </div>
+          <div class="amount-row">
+            <span class="label">Hoa hong affiliate</span>
+            <span class="value">187,500 VND</span>
+          </div>
+          <div class="amount-row">
+            <span class="label">Phi nen tang (33%)</span>
+            <span class="value" style="color: var(--text-muted);">-62,500 VND</span>
+          </div>
+          <div class="divider"></div>
+          <div class="amount-row highlight">
+            <span class="label" style="font-weight: var(--weight-semibold); color: var(--text-primary);">Hoan tien cho ban</span>
+            <span class="value">125,000 VND</span>
+          </div>
+
+          <div class="divider"></div>
+
+          <!-- Detail info -->
+          <div style="display: flex; flex-direction: column; gap: var(--space-3);">
+            <div style="display: flex; justify-content: space-between;">
+              <span class="text-small text-muted">Network</span>
+              <span class="text-small" style="color: var(--text-secondary);">AccessTrade</span>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span class="text-small text-muted">Transaction ID</span>
+              <span class="text-small cell-mono" style="color: var(--brand-primary);">AT-7829341</span>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span class="text-small text-muted">Ngay click</span>
+              <span class="text-small" style="color: var(--text-secondary);">15/03/2026 14:32</span>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span class="text-small text-muted">Ngay duyet</span>
+              <span class="text-small" style="color: var(--text-secondary);">20/03/2026 09:15</span>
+            </div>
+            <div style="display: flex; justify-content: space-between;">
+              <span class="text-small text-muted">Thoi gian xu ly</span>
+              <span class="text-small" style="color: var(--text-secondary);">5 ngay</span>
+            </div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div style="display: flex; gap: var(--space-3);">
+            <a href="wallet.html" class="btn btn-primary btn-sm btn-pill" style="flex: 1; justify-content: center;">Xem vi tien</a>
+            <button class="btn btn-ghost btn-sm btn-pill" onclick="VHT.toast('Da gui yeu cau ho tro', 'info')" style="flex: 1;">Bao cao van de</button>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand">VuaHoanTien</div>
+            <p class="footer-desc">Nen tang hoan tien hang dau Viet Nam. San deal, copy ma, mua hang qua link — nhan hoan tien ro rang ve vi cua ban.</p>
+          </div>
+          <div class="footer-col">
+            <h4>San pham</h4>
+            <ul>
+              <li><a href="vouchers.html">Ma giam gia</a></li>
+              <li><a href="index.html">Hoan tien</a></li>
+              <li><a href="wallet.html">Vi tien</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Tai khoan</h4>
+            <ul>
+              <li><a href="register.html">Dang ky</a></li>
+              <li><a href="login.html">Dang nhap</a></li>
+              <li><a href="settings.html">Cai dat</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Ho tro</h4>
+            <ul>
+              <li><a href="#">Huong dan</a></li>
+              <li><a href="#">Lien he</a></li>
+              <li><a href="#">Dieu khoan</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          &copy; 2026 VuaHoanTien. Tat ca quyen duoc bao luu.
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>

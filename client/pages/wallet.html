@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vi tien — VuaHoanTien</title>
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/components.css">
+  <style>
+    .wallet-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: var(--space-6);
+    }
+    @media (max-width: 768px) {
+      .wallet-layout { grid-template-columns: 1fr; }
+    }
+    .withdrawal-form .form-group {
+      margin-bottom: var(--space-5);
+    }
+    .history-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: var(--space-4);
+      border-bottom: 1px solid var(--border-soft);
+      transition: background var(--motion-fast);
+    }
+    .history-item:last-child { border-bottom: none; }
+    .history-item:hover { background: rgba(124,140,255,0.04); }
+    .history-left {
+      display: flex;
+      align-items: center;
+      gap: var(--space-3);
+    }
+    .history-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.125rem;
+      flex-shrink: 0;
+    }
+    .history-amount {
+      font-family: var(--font-display);
+      font-weight: var(--weight-bold);
+      white-space: nowrap;
+    }
+    .min-amount-hint {
+      display: flex;
+      align-items: center;
+      gap: var(--space-2);
+      padding: var(--space-3);
+      background: var(--bg-elevated);
+      border-radius: var(--radius-sm);
+      font-size: var(--size-small);
+      color: var(--text-muted);
+      margin-bottom: var(--space-4);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== TOP NAVIGATION ========== -->
+  <nav class="top-nav">
+    <a href="index.html" class="nav-brand">VuaHoanTien</a>
+    <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Trang chu</a></li>
+      <li><a href="vouchers.html">Ma giam gia</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="orders.html">Don hang</a></li>
+      <li><a href="wallet.html" class="active">Vi tien</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="notifications.html" class="nav-icon-btn" title="Thong bao">
+        &#128276;
+        <span class="badge-dot"></span>
+      </a>
+      <a href="settings.html" class="nav-avatar" title="Tai khoan">N</a>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <div class="container">
+
+      <!-- ========== WALLET HERO ========== -->
+      <section class="wallet-hero animate-fade-in-up" style="margin-bottom: var(--space-8);">
+        <h1 class="text-h2 font-display" style="color: white; margin-bottom: var(--space-6);">Vi VuaHoanTien</h1>
+        <div class="wallet-balances">
+          <div class="wallet-balance-item">
+            <div class="label">&#9203; Cho duyet</div>
+            <div class="amount" data-counter="1250000">0</div>
+            <span class="currency">VND</span>
+          </div>
+          <div class="wallet-balance-item">
+            <div class="label" id="available-balance" data-amount="3780000">&#128176; Kha dung</div>
+            <div class="amount" data-counter="3780000">0</div>
+            <span class="currency">VND</span>
+          </div>
+          <div class="wallet-balance-item">
+            <div class="label">&#128274; Dang rut</div>
+            <div class="amount" data-counter="500000">0</div>
+            <span class="currency">VND</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ========== MAIN 2 COLUMN ========== -->
+      <div class="wallet-layout">
+
+        <!-- Left: Withdrawal Form -->
+        <div class="card animate-fade-in-up">
+          <h3 class="text-title font-display" style="margin-bottom: var(--space-5);">Rut tien</h3>
+
+          <div class="min-amount-hint">
+            &#8505; So tien toi thieu de rut la <strong style="color: var(--text-primary); margin-left: 4px;">50,000 VND</strong>
+          </div>
+
+          <form class="withdrawal-form" id="withdrawal-form" onsubmit="handleWithdrawal(event)">
+
+            <div class="form-group">
+              <label class="form-label">Phuong thuc nhan tien</label>
+              <select class="form-select" data-required>
+                <option value="">— Chon phuong thuc —</option>
+                <option value="bank">Chuyen khoan ngan hang</option>
+                <option value="momo">Vi MoMo</option>
+                <option value="zalopay">Vi ZaloPay</option>
+              </select>
+              <span class="form-error"></span>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Ho so nhan tien</label>
+              <select class="form-select" data-required>
+                <option value="">— Chon ho so —</option>
+                <option value="1">Vietcombank ****4521 — Nguyen Van A (Mac dinh)</option>
+                <option value="2">MoMo ****1234 — Nguyen Van A</option>
+                <option value="3">ZaloPay ****5678 — Nguyen Van A</option>
+              </select>
+              <span class="form-error"></span>
+              <a href="settings.html" class="text-small" style="color: var(--brand-primary); display: inline-block; margin-top: var(--space-2);">+ Them ho so moi</a>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">So tien rut</label>
+              <input class="form-input" type="text" id="withdrawal-amount" placeholder="Nhap so tien (VND)" data-required autocomplete="off">
+              <span class="form-error"></span>
+              <div style="display: flex; gap: var(--space-2); margin-top: var(--space-2);">
+                <button type="button" class="btn btn-ghost btn-sm" onclick="document.getElementById('withdrawal-amount').value='100000'; document.getElementById('withdrawal-amount').dispatchEvent(new Event('input'));">100K</button>
+                <button type="button" class="btn btn-ghost btn-sm" onclick="document.getElementById('withdrawal-amount').value='500000'; document.getElementById('withdrawal-amount').dispatchEvent(new Event('input'));">500K</button>
+                <button type="button" class="btn btn-ghost btn-sm" onclick="document.getElementById('withdrawal-amount').value='1000000'; document.getElementById('withdrawal-amount').dispatchEvent(new Event('input'));">1M</button>
+                <button type="button" class="btn btn-ghost btn-sm" onclick="document.getElementById('withdrawal-amount').value='3780000'; document.getElementById('withdrawal-amount').dispatchEvent(new Event('input'));">Tat ca</button>
+              </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-pill w-full" style="margin-top: var(--space-4);">
+              Gui yeu cau rut tien
+            </button>
+          </form>
+        </div>
+
+        <!-- Right: Withdrawal History -->
+        <div class="card animate-fade-in-up">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: var(--space-5);">
+            <h3 class="text-title font-display">Lich su rut tien</h3>
+            <span class="badge badge-info">5 yeu cau</span>
+          </div>
+
+          <div>
+            <div class="history-item">
+              <div class="history-left">
+                <div class="history-icon" style="background: var(--state-info-dim); color: var(--state-info);">&#9203;</div>
+                <div>
+                  <div class="text-caption" style="color: var(--text-primary); font-weight: var(--weight-semibold);">Rut ve MoMo ****1234</div>
+                  <div class="text-small text-muted">25/03/2026 — <span class="badge badge-info" style="font-size: 10px;">Dang xu ly</span></div>
+                </div>
+              </div>
+              <div class="history-amount text-info">-500,000</div>
+            </div>
+
+            <div class="history-item">
+              <div class="history-left">
+                <div class="history-icon" style="background: var(--state-success-dim); color: var(--state-success);">&#10003;</div>
+                <div>
+                  <div class="text-caption" style="color: var(--text-primary); font-weight: var(--weight-semibold);">Rut ve Vietcombank ****4521</div>
+                  <div class="text-small text-muted">18/03/2026 — <span class="badge badge-success" style="font-size: 10px;">Thanh cong</span></div>
+                </div>
+              </div>
+              <div class="history-amount text-success">-1,000,000</div>
+            </div>
+
+            <div class="history-item">
+              <div class="history-left">
+                <div class="history-icon" style="background: var(--state-success-dim); color: var(--state-success);">&#10003;</div>
+                <div>
+                  <div class="text-caption" style="color: var(--text-primary); font-weight: var(--weight-semibold);">Rut ve MoMo ****1234</div>
+                  <div class="text-small text-muted">10/03/2026 — <span class="badge badge-success" style="font-size: 10px;">Thanh cong</span></div>
+                </div>
+              </div>
+              <div class="history-amount text-success">-750,000</div>
+            </div>
+
+            <div class="history-item">
+              <div class="history-left">
+                <div class="history-icon" style="background: var(--state-success-dim); color: var(--state-success);">&#10003;</div>
+                <div>
+                  <div class="text-caption" style="color: var(--text-primary); font-weight: var(--weight-semibold);">Rut ve Vietcombank ****4521</div>
+                  <div class="text-small text-muted">01/03/2026 — <span class="badge badge-success" style="font-size: 10px;">Thanh cong</span></div>
+                </div>
+              </div>
+              <div class="history-amount text-success">-2,000,000</div>
+            </div>
+
+            <div class="history-item">
+              <div class="history-left">
+                <div class="history-icon" style="background: var(--state-danger-dim); color: var(--state-danger);">&#10007;</div>
+                <div>
+                  <div class="text-caption" style="color: var(--text-primary); font-weight: var(--weight-semibold);">Rut ve ZaloPay ****5678</div>
+                  <div class="text-small text-muted">20/02/2026 — <span class="badge badge-danger" style="font-size: 10px;">That bai</span></div>
+                </div>
+              </div>
+              <div class="history-amount text-danger">-300,000</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand">VuaHoanTien</div>
+            <p class="footer-desc">Nen tang hoan tien hang dau Viet Nam. San deal, copy ma, mua hang qua link — nhan hoan tien ro rang ve vi cua ban.</p>
+          </div>
+          <div class="footer-col">
+            <h4>San pham</h4>
+            <ul>
+              <li><a href="vouchers.html">Ma giam gia</a></li>
+              <li><a href="index.html">Hoan tien</a></li>
+              <li><a href="wallet.html">Vi tien</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Tai khoan</h4>
+            <ul>
+              <li><a href="register.html">Dang ky</a></li>
+              <li><a href="login.html">Dang nhap</a></li>
+              <li><a href="settings.html">Cai dat</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Ho tro</h4>
+            <ul>
+              <li><a href="#">Huong dan</a></li>
+              <li><a href="#">Lien he</a></li>
+              <li><a href="#">Dieu khoan</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          &copy; 2026 VuaHoanTien. Tat ca quyen duoc bao luu.
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="../js/app.js"></script>
+  <script>
+    function handleWithdrawal(e) {
+      e.preventDefault();
+      const form = document.getElementById('withdrawal-form');
+      
+      if (!VHT.validateForm(form)) {
+        VHT.toast('Vui long dien day du thong tin', 'error');
+        return;
+      }
+
+      const amount = parseInt(document.getElementById('withdrawal-amount').value.replace(/\D/g, '')) || 0;
+      if (amount < 50000) {
+        VHT.toast('So tien toi thieu la 50,000 VND', 'warning');
+        return;
+      }
+      if (amount > 3780000) {
+        VHT.toast('Vuot qua so du kha dung', 'error');
+        return;
+      }
+
+      const btn = form.querySelector('button[type="submit"]');
+      btn.disabled = true;
+      btn.innerHTML = '&#8987; Dang xu ly...';
+
+      setTimeout(() => {
+        VHT.toast('Yeu cau rut tien da duoc gui! Du kien 1-3 ngay lam viec.', 'success');
+        btn.disabled = false;
+        btn.innerHTML = 'Gui yeu cau rut tien';
+        form.reset();
+      }, 1500);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lich su don hang — VuaHoanTien</title>
+  <link rel="stylesheet" href="../css/design-system.css">
+  <link rel="stylesheet" href="../css/components.css">
+</head>
+<body>
+
+  <!-- ========== TOP NAVIGATION ========== -->
+  <nav class="top-nav">
+    <a href="index.html" class="nav-brand">VuaHoanTien</a>
+    <button class="nav-hamburger" aria-label="Menu">&#9776;</button>
+    <ul class="nav-links">
+      <li><a href="index.html">Trang chu</a></li>
+      <li><a href="vouchers.html">Ma giam gia</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      <li><a href="orders.html" class="active">Don hang</a></li>
+      <li><a href="wallet.html">Vi tien</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="notifications.html" class="nav-icon-btn" title="Thong bao">
+        &#128276;
+        <span class="badge-dot"></span>
+      </a>
+      <a href="settings.html" class="nav-avatar" title="Tai khoan">N</a>
+    </div>
+  </nav>
+
+  <div class="page-content">
+    <div class="container">
+
+      <!-- ========== PAGE HEADER ========== -->
+      <section class="animate-fade-in-up" style="margin-bottom: var(--space-6);">
+        <h1 class="text-h2 font-display" style="margin-bottom: var(--space-2);">Lich su don cashback</h1>
+        <p class="text-caption text-muted">Theo doi tat ca cac don hang va trang thai hoan tien cua ban.</p>
+      </section>
+
+      <!-- ========== SUMMARY STATS ========== -->
+      <div class="grid-4 gap-4 stagger animate-fade-in-up" style="margin-bottom: var(--space-6);">
+        <div class="stat-card">
+          <div class="stat-label">Tong don</div>
+          <div class="stat-value" style="font-size: var(--size-h3);">47</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Da duyet</div>
+          <div class="stat-value text-success" style="font-size: var(--size-h3);">38</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Cho duyet</div>
+          <div class="stat-value text-warning" style="font-size: var(--size-h3);">6</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Tu choi</div>
+          <div class="stat-value text-danger" style="font-size: var(--size-h3);">3</div>
+        </div>
+      </div>
+
+      <!-- ========== FILTER BAR ========== -->
+      <div class="filter-bar animate-fade-in-up" style="margin-bottom: var(--space-6);">
+        <div class="chip-group" data-mode="single">
+          <button class="chip active" data-value="all">Tat ca</button>
+          <button class="chip" data-value="pending">Cho duyet</button>
+          <button class="chip" data-value="approved">Da duyet</button>
+          <button class="chip" data-value="rejected">Tu choi</button>
+        </div>
+        <div class="chip-group" data-mode="single" style="margin-left: var(--space-2);">
+          <button class="chip active" data-value="all-platform">Tat ca san</button>
+          <button class="chip" data-value="shopee">Shopee</button>
+          <button class="chip" data-value="lazada">Lazada</button>
+        </div>
+        <input type="text" class="search-input" placeholder="&#128269; Tim kiem ma don..." style="margin-left: auto;">
+      </div>
+
+      <!-- ========== ORDERS TABLE ========== -->
+      <div class="table-wrap animate-fade-in-up" style="margin-bottom: var(--space-6);">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Ma don</th>
+              <th>San</th>
+              <th>San pham</th>
+              <th>Gia tri don</th>
+              <th>Hoan tien</th>
+              <th>Trang thai</th>
+              <th>Ngay mua</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="cell-mono">CB-2026031501</td>
+              <td><span class="badge" style="background: rgba(255,87,34,0.15); color: #FF5722;">Shopee</span></td>
+              <td class="cell-primary">Tai nghe Bluetooth Sony WH-1000XM5</td>
+              <td class="cell-amount">1,250,000</td>
+              <td class="cell-amount text-success">125,000</td>
+              <td><span class="badge badge-success">Da duyet</span></td>
+              <td>15/03/2026</td>
+              <td><a href="order-detail.html" class="btn btn-ghost btn-sm">Chi tiet</a></td>
+            </tr>
+            <tr>
+              <td class="cell-mono">CB-2026031489</td>
+              <td><span class="badge" style="background: rgba(15,26,183,0.2); color: #7B8FFF;">Lazada</span></td>
+              <td class="cell-primary">May hut bui Xiaomi G10</td>
+              <td class="cell-amount">850,000</td>
+              <td class="cell-amount text-warning">63,750</td>
+              <td><span class="badge badge-warning">Cho duyet</span></td>
+              <td>14/03/2026</td>
+              <td><a href="order-detail.html" class="btn btn-ghost btn-sm">Chi tiet</a></td>
+            </tr>
+            <tr>
+              <td class="cell-mono">CB-2026031420</td>
+              <td><span class="badge" style="background: rgba(15,26,183,0.2); color: #7B8FFF;">Lazada</span></td>
+              <td class="cell-primary">Bo cham soc da The Ordinary</td>
+              <td class="cell-amount">520,000</td>
+              <td class="cell-amount text-success">78,000</td>
+              <td><span class="badge badge-success">Da duyet</span></td>
+              <td>12/03/2026</td>
+              <td><a href="order-detail.html" class="btn btn-ghost btn-sm">Chi tiet</a></td>
+            </tr>
+            <tr>
+              <td class="cell-mono">CB-2026031398</td>
+              <td><span class="badge" style="background: rgba(255,87,34,0.15); color: #FF5722;">Shopee</span></td>
+              <td class="cell-primary">Dien thoai Samsung Galaxy S26</td>
+              <td class="cell-amount">2,100,000</td>
+              <td class="cell-amount text-success">210,000</td>
+              <td><span class="badge badge-success">Da duyet</span></td>
+              <td>10/03/2026</td>
+              <td><a href="order-detail.html" class="btn btn-ghost btn-sm">Chi tiet</a></td>
+            </tr>
+            <tr>
+              <td class="cell-mono">CB-2026031350</td>
+              <td><span class="badge" style="background: rgba(255,87,34,0.15); color: #FF5722;">Shopee</span></td>
+              <td class="cell-primary">Ao khoac Uniqlo Ultra Light Down</td>
+              <td class="cell-amount">380,000</td>
+              <td class="cell-amount text-danger" style="text-decoration: line-through;">28,500</td>
+              <td><span class="badge badge-danger">Tu choi</span></td>
+              <td>08/03/2026</td>
+              <td><a href="order-detail.html" class="btn btn-ghost btn-sm">Chi tiet</a></td>
+            </tr>
+            <tr>
+              <td class="cell-mono">CB-2026031299</td>
+              <td><span class="badge" style="background: rgba(255,87,34,0.15); color: #FF5722;">Shopee</span></td>
+              <td class="cell-primary">Robot hut bui Ecovacs Deebot</td>
+              <td class="cell-amount">4,500,000</td>
+              <td class="cell-amount text-success">450,000</td>
+              <td><span class="badge badge-success">Da duyet</span></td>
+              <td>05/03/2026</td>
+              <td><a href="order-detail.html" class="btn btn-ghost btn-sm">Chi tiet</a></td>
+            </tr>
+            <tr>
+              <td class="cell-mono">CB-2026031245</td>
+              <td><span class="badge" style="background: rgba(15,26,183,0.2); color: #7B8FFF;">Lazada</span></td>
+              <td class="cell-primary">Ban phim co Keychron K8 Pro</td>
+              <td class="cell-amount">1,800,000</td>
+              <td class="cell-amount text-warning">135,000</td>
+              <td><span class="badge badge-warning">Cho duyet</span></td>
+              <td>03/03/2026</td>
+              <td><a href="order-detail.html" class="btn btn-ghost btn-sm">Chi tiet</a></td>
+            </tr>
+            <tr>
+              <td class="cell-mono">CB-2026031190</td>
+              <td><span class="badge" style="background: rgba(255,87,34,0.15); color: #FF5722;">Shopee</span></td>
+              <td class="cell-primary">Giay chay Nike Pegasus 41</td>
+              <td class="cell-amount">2,900,000</td>
+              <td class="cell-amount text-success">290,000</td>
+              <td><span class="badge badge-success">Da duyet</span></td>
+              <td>01/03/2026</td>
+              <td><a href="order-detail.html" class="btn btn-ghost btn-sm">Chi tiet</a></td>
+            </tr>
+            <tr>
+              <td class="cell-mono">CB-2026031102</td>
+              <td><span class="badge" style="background: rgba(15,26,183,0.2); color: #7B8FFF;">Lazada</span></td>
+              <td class="cell-primary">Noi chien khong dau Philips 6.2L</td>
+              <td class="cell-amount">1,650,000</td>
+              <td class="cell-amount text-warning">123,750</td>
+              <td><span class="badge badge-warning">Cho duyet</span></td>
+              <td>28/02/2026</td>
+              <td><a href="order-detail.html" class="btn btn-ghost btn-sm">Chi tiet</a></td>
+            </tr>
+            <tr>
+              <td class="cell-mono">CB-2026031050</td>
+              <td><span class="badge" style="background: rgba(255,87,34,0.15); color: #FF5722;">Shopee</span></td>
+              <td class="cell-primary">Dong ho Casio G-Shock GA-2100</td>
+              <td class="cell-amount">950,000</td>
+              <td class="cell-amount text-danger" style="text-decoration: line-through;">71,250</td>
+              <td><span class="badge badge-danger">Tu choi</span></td>
+              <td>25/02/2026</td>
+              <td><a href="order-detail.html" class="btn btn-ghost btn-sm">Chi tiet</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- ========== PAGINATION ========== -->
+      <div class="pagination animate-fade-in-up">
+        <button class="page-btn" onclick="VHT.toast('Trang dau', 'info')">&laquo;</button>
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn">4</button>
+        <button class="page-btn">5</button>
+        <button class="page-btn" onclick="VHT.toast('Trang sau', 'info')">&raquo;</button>
+      </div>
+
+    </div>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <div class="footer-brand">VuaHoanTien</div>
+            <p class="footer-desc">Nen tang hoan tien hang dau Viet Nam. San deal, copy ma, mua hang qua link — nhan hoan tien ro rang ve vi cua ban.</p>
+          </div>
+          <div class="footer-col">
+            <h4>San pham</h4>
+            <ul>
+              <li><a href="vouchers.html">Ma giam gia</a></li>
+              <li><a href="index.html">Hoan tien</a></li>
+              <li><a href="wallet.html">Vi tien</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Tai khoan</h4>
+            <ul>
+              <li><a href="register.html">Dang ky</a></li>
+              <li><a href="login.html">Dang nhap</a></li>
+              <li><a href="settings.html">Cai dat</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Ho tro</h4>
+            <ul>
+              <li><a href="#">Huong dan</a></li>
+              <li><a href="#">Lien he</a></li>
+              <li><a href="#">Dieu khoan</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          &copy; 2026 VuaHoanTien. Tat ca quyen duoc bao luu.
+        </div>
+      </div>
+    </footer>
+
+  </div>
+
+  <script src="../js/app.js"></script>
+</body>
+</html>
