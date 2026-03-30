@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>VuaHoanTien - Kết quả hoàn tiền</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "tertiary-fixed-dim": "#2be800",
+                        "secondary-dim": "#efc900",
+                        "on-primary-fixed": "#003840",
+                        "on-secondary-fixed": "#453900",
+                        "on-tertiary-fixed": "#064200",
+                        "surface-container": "#19191d",
+                        "secondary-fixed": "#ffd709",
+                        "on-surface": "#f0edf1",
+                        "on-tertiary-container": "#0b5800",
+                        "surface": "#0e0e11",
+                        "surface-container-high": "#1f1f23",
+                        "on-tertiary-fixed-variant": "#0d6200",
+                        "on-surface-variant": "#acaaae",
+                        "surface-bright": "#2c2c30",
+                        "secondary-container": "#705d00",
+                        "on-secondary": "#5b4b00",
+                        "surface-container-highest": "#25252a",
+                        "on-background": "#f0edf1",
+                        "inverse-on-surface": "#555458",
+                        "surface-variant": "#25252a",
+                        "primary-fixed-dim": "#00d4ec",
+                        "primary-dim": "#00d4ec",
+                        "inverse-surface": "#fcf8fd",
+                        "primary-container": "#00e3fd",
+                        "surface-container-low": "#131316",
+                        "surface-dim": "#0e0e11",
+                        "secondary-fixed-dim": "#efc900",
+                        "surface-tint": "#81ecff",
+                        "outline-variant": "#48474b",
+                        "error": "#ff716c",
+                        "tertiary-container": "#2ff801",
+                        "tertiary-dim": "#2be800",
+                        "on-secondary-fixed-variant": "#665500",
+                        "on-secondary-container": "#fff7e6",
+                        "on-primary": "#005762",
+                        "on-primary-fixed-variant": "#005762",
+                        "on-primary-container": "#004d57",
+                        "background": "#0e0e11"
+                    },
+                    fontFamily: {
+                        "headline": ["Manrope"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: { "DEFAULT": "0.125rem", "lg": "0.25rem", "xl": "0.5rem", "full": "0.75rem" },
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-card {
+            background: rgba(44, 44, 48, 0.6);
+            backdrop-filter: blur(20px);
+        }
+        .primary-gradient {
+            background: linear-gradient(135deg, #81ecff 0%, #00d4ec 100%);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0e0e11]/60 backdrop-blur-xl shadow-[0_20px_40px_rgba(0,0,0,0.4)]">
+<div class="flex justify-between items-center h-16 px-6 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<a class="text-2xl font-black text-[#81ecff] tracking-tighter font-headline" href="../trang_ch_ti_ng_vi_t/index.html">VuaHoanTien</a>
+<nav class="hidden md:flex items-center gap-6">
+<a class="text-[#acaaae] hover:text-[#f0edf1] transition-colors font-headline font-bold tracking-tight" href="../kh_m_ph_voucher_ti_ng_vi_t/voucher.html">Ưu đãi</a>
+<a class="text-[#81ecff] border-b-2 border-[#81ecff] pb-1 font-headline font-bold tracking-tight" href="cashback.html">Hoàn Tiền</a>
+<a class="text-[#acaaae] hover:text-[#f0edf1] transition-colors font-headline font-bold tracking-tight" href="../b_ng_i_u_khi_n_ti_ng_vi_t/wallet.html">Ví</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-[#acaaae] hover:bg-[#2c2c30]/40 transition-all duration-300 active:scale-95 rounded-full">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<div class="w-10 h-10 rounded-full overflow-hidden border-2 border-outline-variant/15">
+<img alt="User profile and settings" data-alt="Close-up portrait of a professional man with clean lighting and neutral studio background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6peRpXrt3mHewQzF1PYEuXN08rsr0qQvqGoVzLGIDRxVSE7HoXLTh1oqCjE5cDWE0gxl-E53LJam3DAQjaGzdSNqbS_ab-YTaYq05rZyyeh6xW3dZcx6XHV6McAuyo4c24vBsQjNY2VNOCINQ1EnflcecCbMYOCc1CuWMlVeYuRLXzTlLEhDVepImTZfcOMW-pODlSjWYdF_MnW-pnY_K5QldFegqAAoKJ_2kvPkOkb2muZG-nIExJBRzIdNM5upM7J1P87pWvC8"/>
+</div>
+</div>
+</div>
+</header>
+<main class="pt-24 pb-20 px-6 max-w-5xl mx-auto">
+<!-- Hero Status -->
+<div class="mb-10 text-center">
+<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-tertiary/10 border border-tertiary/20 mb-4">
+<span class="material-symbols-outlined text-tertiary text-sm" data-icon="check_circle" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<span class="text-tertiary text-xs font-bold uppercase tracking-widest">Link hợp lệ</span>
+</div>
+<h1 class="text-4xl md:text-5xl font-black font-headline tracking-tighter mb-4 text-on-surface">Sẵn sàng nhận hoàn tiền</h1>
+<p class="text-on-surface-variant max-w-xl mx-auto">Chúng tôi đã tìm thấy sản phẩm của bạn. Hãy hoàn tất mua sắm qua VuaHoanTien để nhận thưởng vào ví.</p>
+</div>
+<!-- Bento Grid Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<!-- Product Preview Card -->
+<div class="md:col-span-7 bg-surface-container-low rounded-xl overflow-hidden group">
+<div class="relative h-64 w-full overflow-hidden">
+<img class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="Premium wireless noise-canceling headphones in matte black finish on a sleek dark marble surface with dramatic rim lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDWp5jKWa9WFct3B_QREc7Vq4jCJLdmMl1R-JMT-3RWgJ4iDIM-vx_tiuXVEfiGqO59vtzXXySUTc6m_K6VbWPlTi7jwE3NDSjq3nD3LH9fxC9WDauViDJnvdrVnlEccgdxt2-l1yRFkxGvIbbebDfG_2e_PpNkW6bsnkqhlaWRw8DFzOPbNShvkTQmnHfSRMecG4OQxmhQXOrW578hBdShJeXu-ovb1_xAzo7nQVc_0eodpnfqn1mxu8wCiGmM35b-8VwMPm4iHjE"/>
+<div class="absolute top-4 left-4 glass-card px-3 py-1 rounded-lg border border-outline-variant/15">
+<span class="text-xs font-bold text-primary tracking-tight font-headline">Shopee Mall</span>
+</div>
+</div>
+<div class="p-8">
+<h2 class="text-2xl font-bold font-headline mb-2 text-on-surface">Tai Nghe Không Dây Premium Sound X1</h2>
+<div class="flex items-baseline gap-3">
+<span class="text-3xl font-black text-on-surface font-headline">4.250.000đ</span>
+<span class="text-on-surface-variant line-through text-sm italic">5.100.000đ</span>
+</div>
+<div class="mt-6 flex items-center gap-4 pt-6 border-t border-outline-variant/15">
+<div class="flex -space-x-2">
+<div class="w-8 h-8 rounded-full border-2 border-surface bg-surface-container-high flex items-center justify-center">
+<span class="text-[10px] font-bold">4.9</span>
+</div>
+</div>
+<span class="text-sm text-on-surface-variant">Hơn 1.2k người đã mua qua VuaHoanTien</span>
+</div>
+</div>
+</div>
+<!-- Cashback Estimate Card -->
+<div class="md:col-span-5 flex flex-col gap-6">
+<div class="bg-surface-container-highest p-8 rounded-xl border-t border-white/5 relative overflow-hidden flex-1">
+<div class="absolute -top-12 -right-12 w-40 h-40 bg-primary/10 rounded-full blur-3xl"></div>
+<div class="relative z-10">
+<span class="text-xs font-bold text-on-surface-variant uppercase tracking-widest block mb-1 font-label">Ước tính nhận lại</span>
+<div class="text-5xl font-black text-primary font-headline tracking-tighter mb-4">212.500đ</div>
+<div class="flex items-center gap-2 mb-8">
+<span class="px-2 py-0.5 rounded bg-primary/20 text-primary text-[10px] font-bold">5% CASHBACK</span>
+<span class="text-on-surface-variant text-xs">+ 1.500 Xu Thưởng</span>
+</div>
+<div class="space-y-4">
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-secondary text-xl" data-icon="query_builder">query_builder</span>
+<div>
+<p class="text-sm font-bold text-on-surface">Ghi nhận sau 48h</p>
+<p class="text-xs text-on-surface-variant">Sau khi bạn hoàn tất thanh toán đơn hàng.</p>
+</div>
+</div>
+<div class="flex items-start gap-3">
+<span class="material-symbols-outlined text-tertiary text-xl" data-icon="verified_user">verified_user</span>
+<div>
+<p class="text-sm font-bold text-on-surface">Tự động đối soát</p>
+<p class="text-xs text-on-surface-variant">Hoàn trả trực tiếp vào ví VuaHoanTien của bạn.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Trust Message -->
+<div class="bg-surface-container-low p-6 rounded-xl flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-on-surface-variant/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="security">security</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                        Hệ thống của chúng tôi đã thiết lập trình theo dõi an toàn. Vui lòng không đóng trình duyệt hoặc chuyển đổi ứng dụng trong quá trình thanh toán.
+                    </p>
+</div>
+</div>
+<!-- Action Area -->
+<div class="md:col-span-12 mt-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+<button class="md:col-span-2 primary-gradient py-5 px-8 rounded-xl flex items-center justify-center gap-3 active:scale-[0.98] transition-all group shadow-[0_10px_30px_rgba(0,212,236,0.3)]">
+<span class="text-on-primary-fixed font-headline font-extrabold text-lg uppercase tracking-tight">Mua Ngay Qua VuaHoanTien</span>
+<span class="material-symbols-outlined text-on-primary-fixed group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</button>
+<div class="grid grid-cols-2 gap-4">
+<button class="bg-surface-bright/60 backdrop-blur-xl border border-outline-variant/15 py-5 px-4 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-surface-bright transition-colors active:scale-95">
+<span class="material-symbols-outlined text-primary" data-icon="smartphone">smartphone</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-on-surface">Mở bằng App</span>
+</button>
+<button class="bg-surface-bright/40 backdrop-blur-xl border border-outline-variant/15 py-5 px-4 rounded-xl flex flex-col items-center justify-center gap-2 hover:bg-surface-bright transition-colors active:scale-95">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="web">web</span>
+<span class="text-[10px] font-bold uppercase tracking-tighter text-on-surface">Fallback Web</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Help Section -->
+<div class="mt-16 bg-surface-container-low/40 rounded-2xl p-10 border border-outline-variant/10">
+<h3 class="text-xl font-headline font-bold mb-6 text-center">Mẹo để luôn nhận được hoàn tiền 100%</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+<div class="text-center">
+<div class="text-3xl font-black text-outline-variant/30 mb-2 font-headline italic">01</div>
+<p class="text-sm font-semibold text-on-surface mb-2">Giỏ hàng trống</p>
+<p class="text-xs text-on-surface-variant">Hãy đảm bảo giỏ hàng của bạn đang trống trước khi nhấn nút "Mua Ngay".</p>
+</div>
+<div class="text-center border-x border-outline-variant/10 px-4">
+<div class="text-3xl font-black text-outline-variant/30 mb-2 font-headline italic">02</div>
+<p class="text-sm font-semibold text-on-surface mb-2">Không dùng Adblock</p>
+<p class="text-xs text-on-surface-variant">Tắt các trình chặn quảng cáo để link theo dõi có thể hoạt động chính xác.</p>
+</div>
+<div class="text-center">
+<div class="text-3xl font-black text-outline-variant/30 mb-2 font-headline italic">03</div>
+<p class="text-sm font-semibold text-on-surface mb-2">Thanh toán ngay</p>
+<p class="text-xs text-on-surface-variant">Hoàn tất việc mua sắm trong vòng 30 phút sau khi nhấn link.</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer -->
+<footer class="w-full py-12 border-t border-[#48474b]/15 bg-[#0e0e11]">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 w-full max-w-7xl mx-auto gap-6">
+<div class="flex flex-col items-center md:items-start gap-2">
+<span class="text-lg font-bold text-[#f0edf1] font-headline">VuaHoanTien</span>
+<p class="font-['Inter'] text-sm text-[#acaaae] text-center md:text-left">© 2024 VuaHoanTien. The Digital Vault of Premium Rewards.</p>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a class="font-['Inter'] text-sm text-[#acaaae] hover:text-[#81ecff] transition-colors opacity-80 hover:opacity-100" href="#">Terms of Service</a>
+<a class="font-['Inter'] text-sm text-[#acaaae] hover:text-[#81ecff] transition-colors opacity-80 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="font-['Inter'] text-sm text-[#acaaae] hover:text-[#81ecff] transition-colors opacity-80 hover:opacity-100" href="#">Trust Center</a>
+<a class="font-['Inter'] text-sm text-[#acaaae] hover:text-[#81ecff] transition-colors opacity-80 hover:opacity-100" href="#">Support</a>
+</div>
+</div>
+</footer>
+<div class="md:hidden fixed bottom-0 w-full bg-[#0e0e11]/90 backdrop-blur-xl border-t border-outline-variant/10 z-50 flex justify-around items-center py-3">
+<a class="flex flex-col items-center gap-1 text-[#acaaae]" href="../trang_ch_ti_ng_vi_t/index.html">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Trang chủ</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#acaaae]" href="../kh_m_ph_voucher_ti_ng_vi_t/voucher.html">
+<span class="material-symbols-outlined">confirmation_number</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Ưu đãi</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#81ecff]" href="cashback.html">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">paid</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Hoàn Tiền</span>
+</a>
+<a class="flex flex-col items-center gap-1 text-[#acaaae]" href="../b_ng_i_u_khi_n_ti_ng_vi_t/wallet.html">
+<span class="material-symbols-outlined">account_balance_wallet</span>
+<span class="text-[10px] font-bold uppercase tracking-widest">Ví</span>
+</a>
+</div>
+</body></html>
